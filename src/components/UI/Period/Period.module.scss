@@ -1,0 +1,87 @@
+@import '@/template';
+@import '@/variables';
+
+.container {
+  display: flex;
+  @include flex(row, flex-start, center);
+  gap: 8px;
+  flex-wrap: wrap;
+
+  .wrap {
+    display: flex;
+    @include flex(row, flex-start, center);
+    gap: 8px;
+
+    > div:nth-child(1),
+    > div:nth-child(2) {
+      width: auto;
+      min-width: 126px;
+      flex: 1;
+      @include _screenMobile {
+        width: 100%; 
+      }
+    }
+  }
+
+  .date {
+    padding: 8px 16px;
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    text-align: left;
+    .date__item {
+      display: flex;
+      @include flex(row, flex-start, center);
+      background-color: $colorBackgroundForm;
+      border: none;
+      @include font(16px, $colorText, 400);
+      line-height: 19.2px;
+      text-align: left;
+      box-shadow: -1px 1px 20px 0px $borderBlurActive;
+    }
+
+    &:active {
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:disabled {
+      background-color: $colorInputDisabled;
+      border: 0.5px solid $colorInputDisabled;
+      color: $colorTextUnactive;
+    }
+  }
+  .date__placeholder {
+    @include font(16px, $colorTextUnactive, 400);
+  }
+
+  .labelMobile {
+    display: none;
+    font-size: 14px;
+    color: $colorText;
+    margin-bottom: 4px;
+    @include _screenMobile {
+      display: block;
+    }
+  }
+
+  .dash {
+    @include _screenMobile {
+      display: none; 
+    }
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}

@@ -1,0 +1,359 @@
+@import '@/variables';
+@import '@/template';
+
+.sorter {
+  width: 100%;
+
+  .sorterContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .leftSection {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    background-color: #a6c0f3;
+    margin: 0 1rem;
+  }
+
+  .centerSection {
+    flex-grow: 1;
+    display: flex;
+    gap: 1rem;
+
+    .filterOptions {
+      display: flex;
+      gap: 1rem;
+
+      .filterItem {
+        position: relative;
+
+        .filterButton {
+          padding: 0.5rem 1rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 0.375rem;
+          background: none;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &.active {
+            border-color: rgba(92, 117, 206, 1);
+          }
+
+          &:hover {
+            background-color: rgba(215, 224, 249, 1);
+          }
+        }
+
+        .dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 10;
+          background: white;
+          border-radius: 0.375rem;
+          padding: 28px 32px;
+          margin-top: 0.5rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .clearFilters {
+      padding: 0.5rem 1rem;
+      background: none;
+      cursor: pointer;
+      color: rgba(0, 64, 227, 1);
+      border: none;
+
+      &:hover {
+        color: rgba(0, 64, 227, 1);
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  // Секция справа, сортировка
+  .rightSection {
+    position: relative;
+
+    .sortButtonContainer {
+      .sortButton {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.375rem;
+        background: none;
+        cursor: pointer;
+    
+        &:hover {
+          background-color: #f3f4f6;
+        }
+      }
+    
+      .sortMenu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 10;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.375rem;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        white-space: nowrap;
+    
+        .sortOption {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: 100%;
+          text-align: left;
+          padding: 0.5rem;
+          background: none;
+          cursor: pointer;
+          border: 1px solid transparent;
+          position: relative;
+    
+          &:hover {
+            background-color: #f3f4f6;
+          }
+    
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid rgba(96, 110, 128, 1);
+            border-radius: 50%;
+            background: none;
+            flex-shrink: 0;
+          }
+    
+          &::after {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 8.5%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: rgba(92, 117, 206, 1); 
+            border-radius: 50%;
+          }
+
+          &.active {
+            &::after {
+              display: block; 
+            }
+            &::before {
+              border: 1.5px solid rgba(92, 117, 206, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// Чекбоксы 
+.checkboxFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 1);
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 2px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #f4f7ff; // $colorCheckboxHover
+    }
+
+    input[type='checkbox'] {
+      appearance: none;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      margin: 0;
+      border: 0.5px solid rgba(96, 110, 128, 1); // $colorCheckboxBorder
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 1); //  $colorBackground
+      transition: background-color 0.3s, border-color 0.3s;
+      cursor: pointer;
+
+      &:checked {
+        background-color: rgba(255, 255, 255, 1); // $colorCheckboxActive
+        border-color: #5c75ce; //  $colorCheckboxActive
+        &:after {
+          content: '';
+          position: absolute;
+          width: 7px;
+          height: 12px;
+          top: 1px;
+          left: 6px;
+          border: solid #5c75ce; //  $colorCheckboxCheck
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .checkboxText {
+      margin-left: 44px; 
+      color: #131315; // $colorText
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+      text-decoration-skip-ink: none;
+      margin-right: 32px;
+      white-space: nowrap;
+    }
+  }
+}
+
+
+
+
+
+/* Стили для фильтра зарплаты */
+.salaryFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+.salaryFilter label {
+  margin-bottom: 8px;
+}
+
+.salaryFilter input {
+  background-color: rgba(244, 247, 255, 1);
+  width: 270px;
+  height: 46px;
+  padding: 8px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  border: none;
+}
+
+.applyButtonSal {
+  background-color: rgba(92, 117, 206, 1);
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 270px;
+  height: 46px;
+  padding: 12px 24px;
+  gap: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.applyButtonSal:hover {
+  background-color: rgba(91, 106, 187, 1);
+}
+
+.applyButtonSal :active {
+  background-color: rgba(71, 86, 161, 1);
+}
+
+
+/* Стили для фильтра опыта */
+.experienceFilter {
+  display: flex;
+  flex-direction: column; 
+}
+
+.experienceFilter .inputsContainer {
+  display: flex;
+  flex-direction: row; 
+  gap: 10px; 
+  align-items: center; 
+}
+
+.experienceFilter label {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+.experienceFilter input {
+  background-color: rgba(244, 247, 255, 1);
+  padding: 8px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  border: none;
+  height: 46px;
+}
+
+/* Стили для плейсхолдера */
+.experienceFilter .numberInput::placeholder {
+  color: rgba(127, 127, 127, 1); 
+  font-size: 16px; 
+}
+
+.applyButtonExp {
+  background-color: rgba(92, 117, 206, 1);
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 270px;
+  height: 46px;
+  padding: 12px 24px;
+  gap: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.applyButtonExp:hover {
+  background-color: rgba(91, 106, 187, 1);
+}
+
+.applyButtonExp:active {
+  background-color: rgba(71, 86, 161, 1);
+}

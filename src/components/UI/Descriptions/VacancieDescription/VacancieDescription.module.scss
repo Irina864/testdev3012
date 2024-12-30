@@ -1,0 +1,435 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 710px;
+  height: fit-content;
+  // height: 1365px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 10px;
+  background: $colorBackgroundForm;
+  @include _screenMobile {
+    width: 360px;
+    height: fit-content;
+    padding: 0px 20px;
+    display: flex;
+    @include flex(column, flex-start, center);
+    gap: 28px;
+    border-radius: 10px;
+  }
+  .card__info {
+    width: 646px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 24px;
+    @include _screenMobile {
+      width: 320px;
+      // height: 290px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .card__info__head {
+      width: 646px;
+      height: 147px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include _screenMobile {
+        width: 320px;
+        height: fit-content;
+      }
+      .title {
+        width: 646px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+          display: flex;
+          @include flex(column-reverse, flex-start, flex-start);
+          gap: 20px;
+        }
+        .title__position {
+          width: 405px;
+          height: 36px;
+          @include font(30px, $colorText, 500);
+          line-height: 36px;
+          letter-spacing: 0.02em;
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include _screenMobile {
+            width: 320px;
+            height: 26px;
+            @include font(22px, $colorText, 500);
+            line-height: 26.4px;
+            text-align: left;
+          }
+        }
+        .title__logo {
+          all: unset;
+          width: 221px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          @include _screenMobile {
+            width: 320px;
+            // width: 207px;
+            height: 36px;
+          }
+          .title__logo__img {
+            width: 36px;
+            height: 36px;
+            border-radius: 30px;
+          }
+          .title__logo__company {
+            width: 145px;
+            height: 24px;
+            @include font(20px, $colorText, 400);
+            line-height: 24px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include _screenMobile {
+              @include font(18px, $colorText, 400);
+              line-height: 21.6px;
+              text-align: left;
+            }
+          }
+          .title__logo__chevron {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+      .extra {
+        width: 646px;
+        height: 91px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: 86px;
+          display: flex;
+          @include flex(column, flex-start, flex-start);
+          gap: 8px;
+        }
+        .extra__box {
+          width: 646px;
+          height: 25px;
+          display: flex;
+          gap: 4px;
+          @include font(18px, $colorTextUnactive, 400);
+          line-height: 25.2px;
+          text-align: left;
+          @include _screenMobile {
+            width: 320px;
+            height: 24px;
+            display: flex;
+            @include flex(row, flex-start, center);
+            gap: 4px;
+            @include font(16px, $colorTextUnactive, 400);
+            line-height: 22.4px;
+            text-align: left;
+          }
+          .extra__box__img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    .card__info__bottom {
+      width: 646px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      @include _screenMobile {
+        width: 320px;
+        height: 70px;
+        display: flex;
+        @include flex(column, flex-start, flex-start);
+        gap: 24px;
+      }
+      .card__info__bottom__reaction {
+        width: 646px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .card__info__bottom__reaction__icon {
+          width: 24px;
+          height: 24px;
+        }
+        .card__info__bottom__reaction__txt {
+          width: 130px;
+          height: 19px;
+          @include font(16px, $colorTextMessage, 500);
+          line-height: 19.2px;
+          text-align: left;
+        }
+      }
+      .card__info__bottom__btnblock {
+        width: 286px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        @include _screenMobile {
+          width: 320px;
+          height: 46px;
+          display: flex;
+          @include flex(row, flex-start, center);
+          gap: 16px;
+        }
+        .card__info__bottom__btnblock__btn {
+          all: unset;
+          width: 224px;
+          height: 46px;
+          //  padding: 12px 24px;
+          border-radius: 10px;
+          background: $colorButtonDark;
+          @include font(20px, $colorTextLight, 400);
+          line-height: 24px;
+          text-align: center;
+          cursor: pointer;
+          @include _screenMobile {
+            width: 258px;
+            height: 46px;
+            @include font(18px, $colorTextLight, 400);
+            line-height: 21.6px;
+            text-align: center;
+          }
+        }
+        .card__info__bottom__btnblock__like {
+          all: unset;
+          width: 46px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          //  padding: 11px;
+          border-radius: 10px;
+          background: $colorItemOnHover;
+          .card__info__bottom__btnblock__like__img {
+            width: 24px;
+            height: 24px;
+            // padding: 3px 1px 2px 1px;
+            cursor: pointer;
+          }
+        }
+      }
+      .card__info__bottom__period {
+        width: 100%;
+        height: 0;
+        border: 1px solid $colorItemBorder;
+      }
+    }
+  }
+  .card__description {
+    width: 646px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    @include _screenMobile {
+      width: 320px;
+      // height: 1278px;
+      height: fit-content;
+      display: flex;
+      @include flex(column, flex-start, center);
+      gap: 24px;
+    }
+    .card__description__info {
+      width: 646px;
+      height: 216px;
+      height: fit-content;
+      @include font(18px, $colorText, 400);
+      line-height: 25.2px;
+      text-align: left;
+      @include _screenMobile {
+        width: 320px;
+        height: fit-content;
+        // display: flex;
+        // @include flex(column, flex-start, center);
+        // gap: 16px;
+      }
+    }
+    .smallBox {
+      width: 646px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include _screenMobile {
+        width: 320px;
+        // height: 92px;
+        height: fit-content;
+        display: flex;
+        @include flex(column, flex-start, center);
+        gap: 16px;
+      }
+      .smallBox__header {
+        width: 646px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: 24px;
+          display: flex;
+          @include flex(row, flex-start, center);
+          gap: 8px;
+        }
+        .smallBox__header__title {
+          width: fit-content;
+          height: 29px;
+          white-space: nowrap;
+          @include font(24px, $colorText, 500);
+          line-height: 28.8px;
+          text-align: left;
+          @include _screenMobile {
+            @include font(20px, $colorText, 500);
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+        .smallBox__header__period {
+          width: 100%;
+          height: 0;
+          border: 1px solid $colorItemBorder;
+        }
+      }
+      .smallBox__content {
+        width: 646px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+          // height: 52px;
+          display: flex;
+          @include flex(column, flex-start, center);
+          gap: 8px;
+        }
+        .smallBox__content__str {
+          width: 646px;
+          height: fit-content;
+          display: flex;
+          gap: 12px;
+          @include _screenMobile {
+            width: 320px;
+            // height: 22px;
+            height: fit-content;
+            display: flex;
+            @include flex(row, flex-start, center);
+            gap: 12px;
+          }
+          .smallBox__content__str__title {
+            width: 144px;
+            // height: 22px;
+            height: fit-content;
+            @include font(16px, $colorTextUnactive, 400);
+            line-height: 22.4px;
+            text-align: left;
+            @include _screenMobile {
+              width: 83px;
+              height: 20px;
+              @include font(14px, $colorTextUnactive, 400);
+              line-height: 19.6px;
+            }
+          }
+          .smallBox__content__str__data {
+            width: 490px;
+            height: 25px;
+            @include font(18px, $colorText, 400);
+            line-height: 25.2px;
+            text-align: left;
+            @include _screenMobile {
+              // width: 225px;
+              width: fit-content;
+              height: 22px;
+              // gap: 16px;
+              @include font(16px, $colorTextUnactive, 400);
+              line-height: 22.4px;
+            }
+          }
+        }
+      }
+    }
+    .bigBox {
+      width: 646px;
+      // height: 272px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include _screenMobile {
+        width: 320px;
+        // height: 398px;
+        height: fit-content;
+        display: flex;
+        @include flex(column, flex-start, center);
+        gap: 16px;
+      }
+      .bigBox__header {
+        width: 646px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: 24px;
+          display: flex;
+          @include flex(row, flex-start, center);
+          gap: 8px;
+        }
+        .bigBox__header__title {
+          // width: 148px;
+          width: fit-content;
+          height: 29px;
+          @include font(24px, $colorText, 500);
+          line-height: 28.8px;
+          text-align: left;
+        }
+        .bigBox__header__period {
+          width: 100%;
+          height: 0;
+          border: 1px solid $colorItemBorder;
+        }
+      }
+      .bigBox__content {
+        width: 646px;
+        height: fit-content;
+        @include font(18px, $colorText, 400);
+        line-height: 25.2px;
+        text-align: left;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+          @include font(16px, $colorText, 400);
+          line-height: 22.4px;
+        }
+      }
+    }
+  }
+}

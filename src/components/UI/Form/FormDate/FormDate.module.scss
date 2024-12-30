@@ -1,0 +1,104 @@
+@import '@/template';
+@import '@/variables';
+
+.container {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  .container__title {
+    margin-bottom: 12px;
+    line-height: 19.2px;
+    @include font(16px, $colorText, 400);
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+    }
+  }
+  .dateInputContainer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+    .dateInput {
+      display: flex;
+      @include flex(column, center, center);
+      padding: 13.5px 16px;
+      background-color: $colorInput;
+      border: 0.5px solid $colorInput;
+      border-radius: 10px;
+      @include font(16px, $colorText, 400);
+      text-align: center;
+      line-height: 19.2px;
+      @include _screenMobile {
+        @include font(14px, $colorText, 400);
+        padding: 16px;
+
+      }
+      &:focus {
+        outline: none;
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:disabled {
+        background-color: $colorInputDisabled;
+        border: 0.5px solid $colorInputDisabled;
+        color: $colorTextUnactive;
+      }
+      &::placeholder {
+        @include font(16px, $colorTextUnactive, 400);
+        line-height: 19.2px;
+        @include _screenMobile {
+          @include font(14px, $colorTextUnactive, 400);
+        }
+      }
+      -moz-appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+  .day {
+    width: 56px;
+  }
+  .month {
+    width: 61px;
+    
+  }
+  .year {
+    width: 68px;
+  }
+
+  .calendarBtn {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
+    &:focus {
+      border: none;
+    }
+  }
+
+  .calendarWrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    margin-top: 5px;
+    background-color: $colorBackgroundForm;
+    border: 1px solid $colorBackgroundForm;
+    border-radius: 10px;
+    box-shadow: -1px 1px 20px 0px $borderBlur;
+  }
+  .calendarWrapperAll {
+    position: absolute;
+    top: 200%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: $colorBackgroundForm;
+    border: 1px solid $colorBackgroundForm;
+    border-radius: 10px;
+  }
+}
+.error {
+  border-color: $colorInputBorderError !important;
+}

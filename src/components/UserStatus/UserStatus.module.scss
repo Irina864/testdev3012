@@ -1,0 +1,47 @@
+@import "@/template";
+@import "@/variables";
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .logoContainer {
+    margin-right: 10px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .statusContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .companyName {
+    font-size: 16px;
+    color: $colorText;
+  }
+
+  .status {
+    font-size: 16px;
+    color: $colorTextSuccess;
+  }
+
+  .headerRight {
+    a {
+      font-size: 16px;
+      color: rgb(0, 64, 227);
+      text-decoration: underline;
+    }
+  }
+}

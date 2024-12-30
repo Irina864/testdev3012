@@ -1,0 +1,102 @@
+@import '@/template';
+@import '@/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  .container__title {
+    @include font(16px, $colorText, 400);
+    @include _screenMobile {
+      font-size: 14px;
+    }
+  }
+  .box {
+    display: flex;
+    @include flex(row, flex-start, center);
+    gap: 12px;
+    @include _screenMobile { 
+      width: 100%;
+    }
+  }
+  .radioWrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    @include _screenMobile {
+      flex: 1;
+    }
+  }
+  .label {
+    padding: 12px 24px;
+    border: 0.5px solid $colorButtonBorder;
+    border-radius: 10px;
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    display: inline-block;
+    user-select: none;
+
+    &:hover {
+      background-color: $colorButtonLightHover;
+    }
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      width: 100%;
+      padding: 10px 16px; 
+      text-align: center;
+    }
+  }
+
+  .input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
+    &:focus + .label {
+      background-color: $colorButtonLightHover;
+    }
+    &:checked + .label {
+      color: $colorButtonLightActive;
+    }
+  }
+}
+
+// .container {
+//     display: flex;
+//     @include flex(column, flex-start, flex-start);
+//     gap: 12px;
+//     .container__title {
+//         @include font(16px, $colorText, 400);
+//     }
+//     .box {
+//         display: flex;
+//         @include flex(row, flex-start, center);
+//         gap: 12px;
+//         .label {
+//             padding: 12px 24px;
+//             border: 0.5px solid $colorButtonBorder;
+//             border-radius: 10px;
+//             @include font(16px, $colorText, 400);
+//             line-height: 19.2px;
+//             align-items: center;
+//             cursor: pointer;
+
+//             &:hover {
+//                 background-color: $colorButtonLightHover;
+//             }
+//         }
+
+//         .input {
+//             display: none;
+
+//             &:checked + .label {
+//                 color: $colorButtonLightActive;
+//             }
+//         }
+//     }
+// }

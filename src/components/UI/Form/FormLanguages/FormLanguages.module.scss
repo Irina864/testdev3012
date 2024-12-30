@@ -1,0 +1,202 @@
+@import '@/variables';
+@import '@/template';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include _screenMobile {
+    gap: 20px;
+  }
+  .languageWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include _screenMobile {
+      gap: 24px;
+    }
+  }
+  .box {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .label__wrap {
+      width: 100%;
+      display: flex;
+      @include flex(row, space-between, center);
+      position: relative;
+    }
+    .label__wrap label {
+      white-space: nowrap;
+      line-height: 19.2px;
+      @include font(16px, $colorText, 500);
+      @include _screenMobile {
+        @include font(14px, $colorText, 500);
+        line-height: 16.8px;
+      }
+    }
+    .languageBox {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      width: 100%;
+    }
+    .deleteBox {
+      display: flex;
+      @include flex(row, center, center);
+      @include _screenMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        .line {
+          width: 1px;
+          height: 24px;
+          border: none;
+          background-color: #5c75ce;
+        }
+      }
+    }
+    .languageContainer {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      @include _screenMobile {
+        gap: 8px;
+        flex-direction: column;
+        align-content: flex-start;
+      }
+      > div:nth-child(1) {
+        width: 161px;
+        @include _screenMobile {
+          width: 167px;
+        }
+      }
+      > div:nth-child(2) {
+        width: 182px;
+        @include _screenMobile {
+          width: 167px;
+        }
+      }
+    }
+
+    // .date {
+    //   appearance: none;
+    //   padding: 8px 16px;
+    //   background-color: #f4f7ff;
+    //   border: 1px solid #d1d9e6;
+    //   border-radius: 8px;
+    //   width: 161px;
+    //   height: 46px;
+    //   font-size: 14px;
+    //   color: #6c757d;
+    //   padding: 8px 16px;
+    //   border-radius: 10px;
+    //   justify-content: space-between;
+    //   // background-image: url($arrowDown);
+    //   // background-repeat: no-repeat;
+    //   // background-position: calc(100% - 16px) center;
+    //   &:focus {
+    //     outline: none;
+    //     border: 1px solid #0056b3;
+    //     // background-image: url($arrowUp);
+    //      font-size: 16px;
+    //      font-weight: 400;
+    //      line-height: 19.2px;
+    //      text-align: left;
+    //      color: #131315;
+    //      border-radius: 10px;
+    //   }
+    //   &:active {
+    //     //  background-image: url($arrowUp);
+    //      border-radius: 10px;
+    //   }
+    // }
+  }
+}
+// .date__option {
+//    width: 129px;
+//    height: 43px;
+//    font-size: 16px;
+//    font-weight: 400;
+//    line-height: 19.2px;
+//    text-align: left;
+//    color: #131315;
+//    border-radius: 10px;
+//    gap: 12px;
+//    background: #FFFFFF;
+//    &:focus {
+//       padding: 0px 16px;
+//       border-radius: 14px;
+//       background-color: #f4f7ff;
+//    }
+//    width: 161px;
+//    height: 228px;
+//    padding: 16px 8px 16px 8px;
+//    gap: 12px;
+//    border-radius: 10px;
+
+// }
+.label__wrap {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: left;
+  @include _screenMobile {
+    @include font(14px, $colorText, 500);
+    line-height: 16.8px;
+  }
+}
+.deletebtn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: #ffffff;
+}
+.deletebtn__label {
+  width: 24px;
+  height: 24px;
+}
+
+.addButtonBox {
+  max-width: 736px;
+  width: 100%;
+  height: 19px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .addButton {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $font;
+    line-height: 19.2px;
+    text-align: center;
+    color: #0040e3;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    text-decoration: none;
+    @include _screenMobile {
+      @include font(14px, #0040e3, 500);
+      line-height: 16.8px;
+    }
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: #004085;
+    }
+  }
+}

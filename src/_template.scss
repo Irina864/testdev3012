@@ -1,0 +1,41 @@
+@import './variables';
+
+@mixin font($fs, $fc, $fw) {
+  font-family: $font;
+  font-size: $fs;
+  color: $fc;
+  font-weight: $fw;
+}
+@mixin flex($fd, $jc, $ai) {
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// медиа миксин для экранов
+@mixin _screenMobile {
+  @media screen and (max-width: 580px) {
+    @content;
+  }
+}
+
+//! пример использования миксина выше (импорт есть везде в scss файлах )
+// .header {
+//   margin: 40px 60px ;
+//   @include _screenMobile {
+//     margin: 15px 20px;
+//   }
+// }
+//! код для регуляции элементов на странице в зависимости от ширины экрана
+// const [windowSize, setWindowSize] = useState(0);
+
+//   useEffect(() => {
+//     const handleResize = () => {
+//       setWindowSize(window.innerWidth);
+//     };
+//     handleResize();
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+//! Пример использования кода выше
+//     windowSize > 360 ? setLogoSrc(logo[0]) : setLogoSrc(logo[1]);

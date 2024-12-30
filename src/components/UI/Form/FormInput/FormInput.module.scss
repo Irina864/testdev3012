@@ -1,0 +1,122 @@
+@import '@/template';
+@import '@/variables';
+
+.box {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 8px;
+  width: 100%;
+  @include _screenMobile {
+    font-size: 14px;
+  }
+  .label {
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    text-align: left;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+    }
+  }
+  .labelModal {
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+    @include _screenMobile {
+      @include font(18px, $colorText, 400);
+      line-height: 21.6px;
+    }
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 392px;
+    min-width: 125px;
+  }
+  .disabled {
+    color: $colorTextUnactive;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 392px;
+    min-width: 125px;
+    height: 46px;
+    padding: 8px 16px;
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    gap: 12px;
+    @include font(16px, $colorText, 400);
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+      gap: 8px;
+    }
+    line-height: 19.2px;
+    text-align: left;
+    &:active {
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:disabled {
+      background-color: $colorInputDisabled;
+      border: 0.5px solid $colorInputDisabled;
+      color: $colorText;
+    }
+  }
+  .inputModal {
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+  }
+  .inputCustom {
+    padding-left: 44px;
+  }
+
+  .salary {
+    padding-left: 55px;
+  }
+  .experience {
+    padding-left: 70px;
+  }
+  .customPlaceholder {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    @include font(16px, $colorTextUnactive, 400);
+    transition: all 0.3s;
+    @include _screenMobile {
+      @include font(14px, $colorTextUnactive, 400);
+      line-height: 16.8px;
+      gap: 8px;
+    }
+  }
+  .clean {
+    position: absolute;
+    top: 35.5%;
+    right: 18.86px;
+    display: flex;
+    @include flex(column, center, center);
+    border: none;
+    background-color: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .padding {
+    padding-right: 40px;
+  }
+}
+.number_input {
+  -moz-appearance: textfield;
+}
+
+.number_input::-webkit-inner-spin-button,
+.number_input::-webkit-outer-spin-button {
+  display: none;
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+$font: 'Fira Sans', sans-serif;
+// Фон приложения и фон иконок в хедере
+$colorBackground: #f5f6fd;
+$colorBackgroundGrey: rgba(159, 161, 171, 1);
+$colorBackgroundError: #fbe9e9;
+$colorBackgroundFooter: #5c75ce;
+
+$colorBackgroundForm: #ffffff;
+
+$colorIconBackground: #d7e0f9;
+$colorIconBackgroundActive: #5c75ce;
+
+$colorShadowCards: #5c75ce26;
+$colorShadowCardsSkeleton: #43464e1a;
+
+$colorSceletonItem: #e7edff;
+
+// в резюме и т.д. цвета боковой панели, так же есть при заполенении форм
+$colorItemActive: #d7e0f9;
+$colorItem: #ffffff;
+$colorItemOnHover: #f4f7ff;
+$colorItemBorder: #5c75ce;
+
+//  цвета заполняющегося столбика в боковой панели
+$colorCircleActive: #5c75ce;
+$colorCircle: #9fa1ab;
+
+//цвета текста
+$colorText: #131315;
+$colorTextUnactive: #7f7f7f;
+$colorTextActive: #5c75ce;
+$colorTextChangeInfo: #0040e3;
+// на странице резюме при выборе пола
+$colorTextChecked: #4756a1;
+$colorTextError: #d42727;
+$colorTextSuccess: #0ca64a;
+$colorTextLight: #ffffff;
+$colorTextMessage: #606e80;
+
+// поля ввода информации
+$colorInput: #f4f7ff;
+$colorInputBorderError: #d42727;
+$colorInputBorderActive: #5c75ce;
+$colorButtonBorder: #5c75ce;
+$colorInputDisabled: #f5f5f5;
+
+//в формах чекбоксы
+$colorCheckboxBorder: #606e80;
+$colorCheckboxBorderHover: #5b6abb;
+$colorCheckboxBorderActive: #5c75ce;
+$colorCheckboxHover: #f4f7ff;
+$colorCheckboxActive: #e7edff;
+$colorCheckboxBorderDisabled: #9fa1ab;
+$colorCheckboxDisabled: #f5f5f5;
+
+$colorMarkHover: #5b6abb;
+$colorMarkActive: #5b6abb;
+$colorMark: #5c75ce;
+
+// кнопки
+$colorButtonDark: #5c75ce;
+$colorButtonDarkHover: #5b6abb;
+$colorButtonDarkActive: #4756a1;
+
+$colorLinkBtn: #0040e3;
+$colorLinkBtnHover: #3366e9;
+$colorLinkBtnActive: #002ea4;
+
+$colorButtonLight: transparent;
+$colorButtonLightHover: #f4f7ff;
+$colorButtonLightActive: #4756a1;
+
+$colorButtonBorder: #5c75ce;
+
+$colorButtonDisabled: #9fa1ab;
+$colorButtonBorderDisabled: #9fa1ab;
+
+// цвет фильтров
+$colorFilter: transparent;
+$colorFilterActive: #d7e0f9;
+$colorFilterBorder: #5c75ce;
+$colorFilterHover: #f5f5f5;
+$colorFilterBackgroundHover: #f4f7ff;
+$colorFilterBackgroundActive: #e7edff;
+
+$colorFooter: #5c75ce;
+
+// цвет линии, разделяющей данные
+$colorLine: #5c75ce;
+$colorLineFooter: #ffffff;
+
+$colorArrow: #404b5a;
+
+$borderBlur: rgba(92, 117, 206, 0.15);
+$borderBlurActive: rgba(92, 117, 206, 0.3);

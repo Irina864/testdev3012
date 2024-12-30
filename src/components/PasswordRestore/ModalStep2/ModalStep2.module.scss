@@ -1,0 +1,98 @@
+@import "@/template";
+@import "@/variables";
+
+.modal_info {
+  height: 501px;
+}
+
+.btn_wrap_step_two {
+  width: 100%;
+  display: flex;
+  @include flex(column, center, center);
+  gap: 20px;
+  .text {
+    @include font(20px, $colorText, 400);
+    line-height: 20px;
+  }
+}
+
+.link {
+  margin-top: 4px;
+  @include font(20px, $colorLinkBtn, 400);
+  line-height: 24px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    color: $colorLinkBtnHover;
+    cursor: pointer;
+  }
+  &:active {
+    color: $colorLinkBtnActive;
+    cursor: pointer;
+  }
+  &:disabled {
+    color: $colorTextUnactive;
+    cursor: none;
+  }
+}
+.underline {
+  text-decoration: underline;
+}
+.smalltext {
+  font-size: 16px;
+  line-height: 19.2px;
+}
+.modal_wrap {
+  width: 100%;
+  display: flex;
+  @include flex(column, flex-start, center);
+  gap: 16px;
+  .modal_step_indicator {
+    width: 100%;
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.code_input {
+  width: 100%;
+  max-width: 239px;
+  display: flex;
+  @include flex(column, center, center);
+  gap: 8px;
+  margin-bottom: 24px;
+  .otp_error {
+    display: flex;
+    @include flex(column, center, center);
+    text-align: center;
+    @include font(16px, $colorTextError, 400);
+    line-height: 19.2px;
+  }
+}
+.modal_content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include flex(column, center, center);
+
+  .otp_form_title {
+    margin-bottom: 20px;
+    @include font(24px, $colorText, 500);
+    line-height: 28.8px;
+    text-align: center;
+  }
+  .otp_form_text {
+    margin-bottom: 4px;
+    text-align: center;
+    @include font(20px, $colorText, 400);
+    line-height: 20px;
+  }
+}
+.otp_form_email {
+  margin-bottom: 40px;
+  @include font(20px, $colorText, 500);
+  line-height: 20px;
+}

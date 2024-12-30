@@ -1,0 +1,27 @@
+@import "@/template";
+@import "@/variables";
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  padding: 48px 40px;
+  hr {
+    border: none;
+    border-top: 1px solid rgb(92, 117, 206);
+    width: 100%;
+    margin-bottom: 28px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .chatContainer {
+    padding: 0;
+    width: 360px;
+    hr {
+      display: none;
+    }
+  }
+}

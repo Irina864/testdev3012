@@ -1,0 +1,68 @@
+@import '@/variables';
+@import '@/template';
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  @include _screenMobile {
+    margin: 0;
+    padding: 5px 20px 40px 20px;
+    background-color: $colorBackgroundForm;
+  }
+  .nav {
+    margin: 32px 0;
+    display: flex;
+    @include flex(row, space-between, center);
+    width: 100%;
+    @include _screenMobile {
+      display: none;
+    }
+    .btn__download {
+      padding: 11px 24px;
+      background-color: $colorButtonLight;
+      border: 0.5px solid $colorButtonBorder;
+      border-radius: 10px;
+      @include font(20px, $colorText, 400);
+      text-align: center;
+      line-height: 24px;
+      &:hover {
+        cursor: pointer;
+        background-color: $colorButtonLightHover;
+        transition: background-color 0.3s ease;
+      }
+      &:active {
+        background-color: $colorButtonLight;
+        color: $colorButtonLightActive;
+      }
+    }
+  }
+  .back {
+    display: none;
+    @include _screenMobile {
+      display: inline-block;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 31.61% 65.8%;
+    gap: 32px;
+    width: 100%;
+    @include _screenMobile {
+      gap: 0px;
+      width: 100%;
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+    }
+  }
+  .sidebarContainer {
+    z-index: 0;
+  }
+  .container aside {
+    width: 100%;
+    .sidebarContainer {
+      width: 100%;
+    }
+  }
+}

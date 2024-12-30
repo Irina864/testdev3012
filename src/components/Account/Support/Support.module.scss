@@ -1,0 +1,120 @@
+@import '@/variables';
+@import '@/template';
+
+.container {
+  max-width: 752px;
+  width: 100%;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include _screenMobile {
+    > div:last-child {
+      margin-top: 4px;
+      margin-bottom: 288px;
+    }
+  }
+}
+.notification {
+  z-index: 20;
+  position: absolute;
+  top: 128px;
+  right: 13vw;
+}
+.errorBox {
+  z-index: 20;
+  position: absolute;
+  top: 123px;
+  right: 0vw;
+}
+.content {
+  max-width: 752px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include _screenMobile {
+    gap: 20px;
+  }
+  .content__inputBox {
+    max-width: 736px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
+    @include _screenMobile {
+      > div {
+        max-height: 160px;
+      }
+    }
+    .content__inputBox__lable {
+      @include font(16px, $colorText, 400);
+      line-height: 19.2px;
+      @include _screenMobile {
+        margin-top: 12px;
+        @include font(14px, $colorText, 400);
+        line-height: 16.8px;
+      }
+    }
+  }
+  .content__addBox {
+    max-width: 700px;
+    width: 100%;
+    height: 19px;
+    display: flex;
+    gap: 12px;
+
+    .content__addBox__btn {
+      // width: fit-content;
+
+      height: 19px;
+      cursor: none;
+    }
+    .content__addBox__btn_label {
+      // width: auto;
+      @include font(16px, $colorTextChangeInfo, 400);
+      text-decoration: underline;
+      text-align: center;
+      border: none;
+      background: none;
+      cursor: pointer;
+      @include _screenMobile {
+        @include font(14px, $colorTextChangeInfo, 400);
+        line-height: 16.8px;
+      }
+    }
+    .content__addBox__p {
+      width: fit-content;
+      height: 17px;
+      @include font(14px, $colorTextUnactive, 400);
+      cursor: default;
+      @include _screenMobile {
+        max-width: 189px;
+        @include font(12px, $colorTextUnactive, 400);
+        line-height: 14.4px;
+      }
+    }
+    .content__addBox__btn_del {
+      width: 16px;
+      height: 16px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .errorInput {
+    border-color: $colorInputBorderError;
+  }
+  .error {
+    @include font(14px, $colorTextUnactive, 400);
+    line-height: 16.8px;
+    text-align: left;
+    color: $colorTextError;
+    @include _screenMobile {
+      @include font(12px, $colorTextError, 400);
+      line-height: 14.4px;
+    }
+  }
+}

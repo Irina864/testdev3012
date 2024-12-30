@@ -1,0 +1,21 @@
+@import "@/variables";
+@import "@/template";
+
+.schedule {
+  width: 100%;
+  max-width: 334px;
+  padding: 16px 32px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  background-color: $colorBackgroundForm;
+  border: none;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  z-index: 10;
+}
+@media screen and (max-width: 580px) {
+  .schedule {
+    box-shadow: none;
+    padding: 0;
+  }
+}

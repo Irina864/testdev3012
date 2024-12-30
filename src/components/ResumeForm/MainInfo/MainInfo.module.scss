@@ -1,0 +1,57 @@
+@import '@/variables';
+@import '@/template';
+
+.form__page2 {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 32px;
+  padding-right: 20px;
+  @include _screenMobile {
+    padding: 0px;
+  }
+
+  .box {
+    width: 100%;
+    display: flex;
+    @include flex(row, flex-start, flex-start);
+    gap: calc((32px / 736px) * 100%);
+    @include _screenMobile {
+      flex-direction: column;
+    }
+
+    .imgwrap {
+      width: calc((172px / 736px) * 100%);
+      @include _screenMobile { 
+        width: 100%;
+        order: -1;
+        margin: 0 auto;
+      }
+    }
+
+    .formbox {
+      width: calc((532px / 736px) * 100%);
+      display: flex;
+      @include flex(column, flex-start, flex-start);
+      gap: 24px;
+      @include _screenMobile {
+        width: 100%;
+      }
+    }
+
+    .group {
+      width: 100%;
+    }
+  }
+}
+
+// стили для ошибок - добавить везде
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

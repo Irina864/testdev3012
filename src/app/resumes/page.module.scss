@@ -1,0 +1,70 @@
+@import '@/variables';
+@import '@/template';
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  @include _screenMobile {
+    height: fit-content;
+    background: $colorBackgroundForm;
+    padding: 0;
+    margin: 0;
+  }
+  .filter {
+    margin: 12px 0 32px 0;
+    display: flex;
+    @include flex(row, center, center);
+    width: 100%;
+    @include _screenMobile {
+      margin: 0px;
+    }
+  }
+  .new {
+    margin: 22px 0 32px 0;
+    @include font(20px, $colorText, 500);
+    line-height: 24px;
+    width: 100%;
+    @include _screenMobile {
+      margin: 36px 00px 24px 00px;
+      padding: 0 20px;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 40.16% 57.26%;
+    gap: 32px;
+    width: 100%;
+    @include _screenMobile {
+      height: fit-content;
+      display: flex;
+      @include flex(column, flex-start, center);
+      background: $colorBackgroundForm;
+      padding: 0 20px 40px 20px;
+      margin: 0;
+      gap: 0px;
+    }
+    .aside {
+      width: 498px;
+      height: 1365px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      @include _screenMobile {
+        height: fit-content;
+        @include flex(column, flex-start, center);
+        gap: 20px;
+      }
+    }
+    .content {
+      width: 710px;
+      height: fit-content;
+      @include _screenMobile {
+        display: flex;
+        @include flex(column, flex-start, center);
+      }
+    }
+  }
+}

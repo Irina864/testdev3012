@@ -1,0 +1,225 @@
+@import "@/template";
+@import "@/variables";
+
+.addressBlock {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 8px;
+  @include _screenMobile {
+    font-size: 14px;
+  }
+  .button {
+    margin-left: 17px;
+    @include font(16px, $colorLinkBtn, 400);
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    &:hover {
+      color: $colorLinkBtnHover;
+      cursor: pointer;
+    }
+    &:active {
+      color: $colorLinkBtnActive;
+    }
+    &:disabled {
+      color: $colorTextUnactive;
+      pointer-events: none;
+    }
+    @include _screenMobile {
+      @include font(14px, $colorLinkBtn, 400);
+      padding: 5px;
+      margin-left: 0; 
+    }
+  }
+  .cancel_button {
+    margin-left: 17px;
+    text-decoration: none;
+  }
+  .save_button {
+    margin-left: 16px;
+  }
+  .address__selectbox {
+    width: 100%;
+    display: flex;
+    @include flex(row, flex-start, center);
+
+    @include _screenMobile {
+      flex-direction: column; 
+      align-items: flex-start; 
+    }
+  }
+
+  .select__wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 392px;
+    min-width: 125px;
+
+    .select {
+      width: 100%;
+      max-width: 392px;
+      min-width: 125px;
+      position: relative;
+      padding: 8px 16px;
+      height: 46px;
+      padding-right: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      background-color: $colorInput;
+      border: 0.5px solid $colorInput;
+      border-radius: 10px;
+      @include font(16px, $colorText, 400);
+      @include _screenMobile {
+        @include font(14px, $colorText, 400);
+      }
+      line-height: 30px;
+      text-align: left;
+      appearance: none;
+      cursor: pointer;
+      &:active {
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:focus {
+        outline: none;
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:disabled {
+        background-color: $colorInputDisabled;
+        border: 0.5px solid $colorInputDisabled;
+        color: $colorTextUnactive;
+      }
+    }
+
+    .select__arrow {
+      content: "";
+      position: absolute;
+      right: 23px;
+      top: 39%;
+      width: 6.5px;
+      height: 6.5px;
+      border: solid $colorArrow;
+      border-width: 0 1px 1px 0;
+      transform: rotate(135deg) scaleY(-1);
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+    .placeholder {
+      @include font(16px, $colorTextUnactive, 400);
+    }
+    .open {
+      transform: translateY(75%) rotate(225deg);
+    }
+    .disabled {
+      background-color: $colorInputDisabled;
+      border: 0.5px solid $colorInputDisabled;
+      color: $colorTextUnactive;
+      pointer-events: none;
+    }
+  }
+}
+.disabled {
+  color: $colorTextUnactive;
+  pointer-events: none;
+}
+.menu__wrap {
+  position: absolute;
+  width: 100%;
+  max-width: 392px;
+  min-width: 125px;
+  top: 54px;
+  left: 0px;
+  padding: 24px 16px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 8px;
+  background-color: $colorBackgroundForm;
+  border: none;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  z-index: 10;
+  @include _screenMobile {
+    padding: 5px;
+  }
+  .option {
+    padding: 0 16px;
+    width: 100%;
+    display: flex;
+    @include flex(row, space-between, center);
+    gap: 5px;
+    background-color: $colorBackgroundForm;
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    text-align: left;
+    &:hover {
+      border-radius: 14px;
+      background-color: $colorCheckboxHover;
+      cursor: pointer;
+    }
+    &:active {
+      border-radius: 14px;
+      background-color: $colorCheckboxActive;
+      cursor: pointer;
+    }
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+    }
+
+    .deletebtn {
+      display: flex;
+      @include flex(column, center, center);
+      border: none;
+      background-color: transparent;
+    }
+    .item {
+      padding: 12px 0;
+      max-width: 302px;
+      width: 100%;
+      @include font(16px, $colorText, 400);
+      line-height: 19.2px;
+      text-align: left;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      @include _screenMobile {
+        @include font(14px, $colorText, 400);
+      }
+    }
+  }
+}
+
+.input__wrap {
+  display: flex;
+  @include flex(row, flex-start, center);
+  width: 100%;
+  > div:nth-child(1) {
+    max-width: 392px;
+  }
+}
+.errorBorder {
+  border-color: $colorInputBorderError !important;
+}
+@media (max-width: 360px) {
+  .addressBlock {
+    .address__selectbox {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .button {
+      margin-left: 0;
+    }
+
+    .input__wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      > div:nth-child(1) {
+        max-width: 100%;
+      }
+    }
+  }
+}

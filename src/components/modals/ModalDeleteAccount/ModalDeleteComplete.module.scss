@@ -1,0 +1,192 @@
+@import '@/template';
+@import '@/variables';
+
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 40px;
+}
+
+.modal_info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: $colorBackgroundForm;
+  border-radius: 14px;
+  width: 604px;
+  height:473px;
+  padding: 60px 60px 60px 60px;
+  gap: 20px;
+}
+
+.modal_content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &_text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.modal_title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0.02em;
+  color: rgba(19, 19, 21, 1);
+}
+
+
+.modal_input_group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  color: rgba(19, 19, 21, 1);
+}
+
+.modal_content_text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(19, 19, 21, 1);
+}
+
+.modal_label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  color: rgba(19, 19, 21, 1);
+
+}
+
+.modal_input {
+  border: none; 
+  border-radius: 10px;
+  background-color: rgba(244, 247, 255, 1);
+  width: 484px;
+  height: 160px;
+  padding: 16px 12px 16px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  resize: none;
+}
+
+.modal_input:focus {
+  border: none; 
+  outline: none; 
+}
+
+.hiddenPassword {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  }
+
+.modal_checkbox_group {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.modal_checkbox {
+  margin-right: 10px;
+}
+
+.modal_checkbox_label {
+  flex: 1;
+}
+
+.modal_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_dialog_button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal_back_btn {
+  background-color: #ccc;
+}
+
+.modal_next_btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.disabled_button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.error_message {
+  color: red;
+}
+
+
+.modal_next_btn {
+  width: 226px;
+  height: 46px;
+  padding: 12px 24px 12px 24px;
+  gap: 12px;
+  border-radius: 10px;
+  background-color: rgba(92, 117, 206, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+
+}
+
+.modal_back_btn {
+  width: 226px;
+  height: 46px;
+  padding: 12px 24px 12px 24px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 0.5px solid rgba(92, 117, 206, 1);
+  color: rgba(19, 19, 21, 1);
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}

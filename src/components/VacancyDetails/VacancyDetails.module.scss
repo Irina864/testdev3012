@@ -1,0 +1,168 @@
+.vacancyDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 32px;
+
+  .vacancyTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .linie {
+    border: none;
+    border-top: 1px solid rgb(92, 117, 206);
+    margin: 20px 0;
+    width: 100%;
+  }
+  .experience_container,
+  .location_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: #7f7f7f;
+    gap: 3px;
+    margin-bottom: 8px;
+    img {
+      width: 15px;
+      height: 19px;
+    }
+    p {
+      margin: 0 4px;
+    }
+  }
+  h2 {
+    color: rgb(19, 19, 21);
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .main_text {
+    color: rgb(19, 19, 21);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    margin: 20px 0;
+  }
+
+  .schedule_block {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 30%;
+      right: 0;
+      height: 0.5px;
+      background-color: rgb(92, 117, 206);
+    }
+  }
+
+  .section_header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    &::after {
+      content: "";
+      height: 0.5px;
+      background-color: rgb(92, 117, 206);
+      flex-grow: 1;
+    }
+  }
+
+  .schedule_content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .schedule_item {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 32px;
+
+    .label {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 16px;
+    }
+  }
+  .ul_list {
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 20px;
+
+      color: rgb(19, 19, 21);
+
+      font-size: 18px;
+      font-weight: 400;
+
+      &::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        color: rgb(19, 19, 21);
+      }
+    }
+  }
+  .time {
+    color: rgb(127, 127, 127);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 8px 0;
+  }
+  .like_button_container {
+    display: flex;
+    gap: 24px;
+    margin: 32px 0;
+    .respond_button {
+      border: none;
+      cursor: pointer;
+      padding: 12px 24px;
+      width: 224px;
+      height: 46px;
+      flex-grow: 1;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      border-radius: 10px;
+      background: rgb(92, 117, 206);
+    }
+  }
+  .like_button {
+    border-radius: 10px;
+    background: rgb(244, 247, 255);
+    border: none;
+    width: 46px;
+    height: 46px;
+    padding: 11px;
+    cursor: pointer;
+  }
+}

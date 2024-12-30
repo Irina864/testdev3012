@@ -1,0 +1,145 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 498px;
+  // height: fit-content;
+  min-height: 262px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 14px;
+  background: $colorBackgroundForm;
+  border: 0.5px solid $colorCircle;
+  box-shadow: 2px 2px 6px 0px $colorShadowCardsSkeleton;
+  &:active {
+    border: 2px solid $colorItemBorder;
+  }
+  @include _screenMobile {
+    width: 320px;
+    min-height: 218px;
+    height: 218px;
+    padding: 20px;
+    gap: 12px;
+  }
+  .card__header {
+    width: 450px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include _screenMobile {
+      width: 280px;
+      height: 40px;
+    }
+    .card__header__logo {
+      width: fit-content;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      @include _screenMobile {
+        width: 173px;
+        height: 40px;
+      }
+      .card__header__logo__img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .card__header__logo__title {
+        width: fit-content;
+        height: fit-content;
+        @include font(20px, $colorText, 400);
+        line-height: 24px;
+        text-align: left;
+        @include _screenMobile {
+          @include font(18px, $colorText, 400);
+          line-height: 21.6px;
+        }
+      }
+    }
+    .card__header__age {
+      width: fit-content;
+      height: fit-content;
+      @include font(16px, $colorTextUnactive, 400);
+      line-height: 19.2px;
+      text-align: left;
+      @include _screenMobile {
+        font-size: 14px;
+        line-height: 16.8px;
+      }
+    }
+    .card__title {
+      width: 450px;
+      height: 29px;
+      @include font(24px, $colorTextUnactive, 500);
+      line-height: 28.8px;
+      text-align: left;
+      @include _screenMobile {
+        width: 280px;
+        height: 24px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  .card__data {
+    width: 450px;
+    height: 56px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    @include _screenMobile {
+      width: 280px;
+      height: 56px;
+      // display: flex;
+      @include flex(column, flex-start, center);
+    }
+    .card__data__city,
+    .card__data__exp {
+      width: 450px;
+      height: 24px;
+      display: flex;
+      gap: 4px;
+      @include _screenMobile {
+        width: 280px;
+        height: 24px;
+      }
+    }
+    .card__data__img {
+      width: 24px;
+      height: 24px;
+    }
+    .card__data__title {
+      width: fit-content;
+      height: 19px;
+      @include font(16px, $colorTextUnactive, 400);
+      line-height: 19.2px;
+      text-align: left;
+      @include _screenMobile {
+        width: 250px;
+        height: 22px;
+        font-size: 14px;
+        line-height: 16.8px;
+      }
+    }
+  }
+  .card__salary {
+    @include font(24px, $colorText, 500);
+    line-height: 28.8px;
+    text-align: left;
+    @include _screenMobile {
+      width: 280px;
+      height: 22px;
+      font-size: 18px;
+      line-height: 21.6px;
+    }
+  }
+}
+.card_active {
+  border: 2px solid $colorItemBorder;
+}

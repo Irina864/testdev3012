@@ -1,0 +1,49 @@
+@import "@/variables";
+@import "@/template";
+
+.container {
+  position: fixed;
+  width: 392px;
+  max-height: 362px;
+  padding: 24px 16px;
+  float: left;
+  gap: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: $colorBackgroundForm;
+  margin: 380px 0 0 100px;
+  z-index: 100;
+  box-shadow: -1px 1px 20px 0px #5c75ce26;
+  .container__item {
+    display: flex;
+    marker: none;
+    width: 360px;
+    height: 43px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    line-height: 19.2px;
+    @include font(16px, $colorText, 400);
+    text-align: left;
+    align-items: center;
+    text-decoration: none;
+    &:last-child {
+      color: $colorTextError;
+    }
+    &:hover {
+      background-color: $colorCheckboxActive;
+    }
+  }
+
+  .container__item_hidden {
+    height: 7px;
+    width: 328px;
+    padding: 0;
+    margin-left: 16px;
+    border-radius: 0;
+    border-bottom: 1px solid $colorItemBorder;
+    &:hover {
+      background-color: $colorBackgroundForm;
+    }
+  }
+}

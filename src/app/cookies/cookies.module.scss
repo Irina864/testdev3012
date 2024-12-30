@@ -1,0 +1,67 @@
+@import '@/variables';
+@import '@/template';
+
+.container {
+  max-width: 1234px;
+  margin: 32px auto 60px auto;
+  padding: 32px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  background-color: $colorBackgroundForm;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @include _screenMobile {
+    gap: 24px;
+    padding: 24px 20px 40px 20px;
+    margin: 0;
+  }
+  .title {
+    @include font(30px, $colorText, 500);
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    @include _screenMobile {
+      @include font(28px, $colorText, 500);
+      line-height: 33.6px;
+      letter-spacing: 0.02em;
+    }
+  }
+  .section {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 8px;
+    @include _screenMobile {
+      gap: 12px;
+    }
+    .paragraph {
+      margin: 0;
+      padding: 0;
+      @include font(18px, $colorText, 400);
+      line-height: 25.2px;
+      text-align: left;
+    }
+    .paragraph_margin {
+      margin-top: 32px;
+    }
+    .paragraph_links {
+      margin: 0;
+      padding: 0;
+      margin-left: 28px;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      .paragraph_link {
+        text-decoration-line: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import '@/variables';
+@import '@/template';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $font;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: $font;
+  margin: 0 auto;
+}
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: $colorBackground;
+}
+
+.none {
+  display: none;
+}
+.error {
+  border: 0.5px solid $colorInputBorderError;
+}
+
+// * {
+//   scrollbar-width: none;
+//   -ms-overflow-style: none;
+// }
+
+// *::-webkit-scrollbar,
+// *::-webkit-scrollbar-thumb,
+// *::-webkit-scrollbar-track,
+// *::-webkit-scrollbar-track-piece,
+// *::-webkit-scrollbar-corner,
+// *::-webkit-scrollbar-button {
+//   display: none;
+//   width: 0;
+//   height: 0;
+//   background: transparent;
+// }
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: #9fa1ab transparent;
+// }
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #9fa1ab;
+  height: 50px !important;
+}
+
+// * {
+//   border: 0.1px solid red;
+// }
+
+// .react-datepicker {
+//   width: 336px;
+//   border: none;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+// }
+// .react-datepicker__month {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .react-datepicker__current-month {
+//   @include font(16px, $colorText, 400);
+//   line-height: 19.2px;
+// }
+// .react-datepicker__aria-live {
+//   display: none;
+// }
+// .react-datepicker__day-names {
+//   display: none;
+// }
+// .react-datepicker__week {
+//   height: 48px;
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+//   grid-template-columns: repeat(7, 1fr);
+// }
+// .react-datepicker__day {
+//   height: 100%;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @include font(16px, $colorText, 400);
+// }
+// .react-datepicker__day--outside-month {
+//   @include font(16px, $colorTextUnactive, 400);
+// }
+// .react-datepicker__day--selected {
+//   width: 40px;
+//   height: 40px;
+//   margin: 4px;
+//   border-radius: 10px;
+//   background-color: $colorButtonDarkActive;
+//   @include font(16px, $colorBackgroundForm, 400);
+// }
+// .react-datepicker__header,
+// .react-datepicker__navigation {
+//   display: none;
+// }

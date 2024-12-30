@@ -1,0 +1,293 @@
+@import '@/template';
+@import '@/variables';
+
+.formModal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include _screenMobile {
+    padding: 16px;
+  }
+}
+
+.formContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  @include _screenMobile {
+    flex-direction: column;
+    gap: 16px;   
+    align-items: stretch;
+  }
+}
+
+.formFields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include _screenMobile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  @include _screenMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%; 
+  }
+}
+
+.formLabel {
+  color: $colorText;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  @include _screenMobile {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left; 
+  }
+}
+
+.formInput,
+.formInputDescription {
+  color: rgb(19, 19, 21);
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(244, 247, 255);
+
+  @include _screenMobile {
+    font-size: 14px;
+  }
+}
+
+.formInput {
+  max-width: 392px;
+  height: 46px;
+  padding: 0 20px;
+  &:active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+
+  &:focus {
+    outline: none;
+    border: 0.5px solid $colorInputBorderActive;
+  }
+
+  &:disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+  }
+  @include _screenMobile {
+    max-width: 100%;
+    height: 46px;
+    padding: 0 20px;
+  }
+}
+
+.formInputDescription {
+  max-width: 584px;
+  padding: 10px;
+  resize: none;
+
+  &:active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+
+  &:focus {
+    outline: none;
+    border: 0.5px solid $colorInputBorderActive;
+  }
+
+  &:disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+  }
+  @include _screenMobile {
+    max-width: 100%; 
+    padding: 10px;
+    resize: none;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  @include _screenMobile {
+    order: -1; 
+    margin-bottom: 16px; 
+    display: flex;
+    justify-content: center; 
+  }
+}
+
+.formIcon {
+  background-color: $colorInput;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.addressForm {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.addAddressLink {
+  position: absolute;
+  right: 25px;
+  top: 60%;
+  transform: translateY(-50%);
+  color: rgb(0, 64, 227);
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration-line: underline;
+  white-space: nowrap;
+  @include _screenMobile {
+    font-size: 14px;
+  }
+}
+
+.errorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.errorIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.errorText {
+  color: rgb(213, 39, 39);
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 392px;
+}
+
+.errorBorder {
+  border: 0.5px solid rgb(213, 39, 39) !important;
+}
+
+.addressCompany {
+  padding-left: 1rem;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 32px;
+  @include _screenMobile {
+    justify-content: center; 
+  }
+}
+
+.backButton,
+.nextButton {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: $font;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.backButton {
+  border: 0.5px solid $colorButtonBorder;
+  color: $colorText;
+  background-color: $colorButtonLight;
+
+  &:hover {
+    background-color: $colorButtonLightHover;
+  }
+
+  &:active {
+    background-color: #e7edff;
+  }
+}
+
+.nextButton {
+  background-color: $colorButtonDark;
+  color: $colorTextLight;
+  border: none;
+
+  &:hover {
+    background-color: $colorButtonDarkHover;
+  }
+
+  &:active {
+    background-color: $colorButtonDarkActive;
+  }
+  @include _screenMobile {
+    width: 100%;
+    max-width: 392px;
+  }
+}
+
+.buttonLogo {
+  @include font(16px, $colorLinkBtn, 400);
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+
+  &:hover {
+    color: $colorLinkBtnHover;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: $colorLinkBtnActive;
+  }
+
+  &:disabled {
+    color: $colorTextUnactive;
+    pointer-events: none;
+  }
+  @include _screenMobile {
+    @include font(14px, $colorLinkBtn, 400);
+  }
+}
+
+.notification {
+  z-index: 20;
+  position: absolute;
+  top: 128px;
+  right: 0;
+}
+

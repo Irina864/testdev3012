@@ -1,0 +1,278 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 710px;
+  height: 1211px;
+  padding: 32px;
+  display: flex;
+  @include flex(column, space-between, flex-start);
+  gap: 40px;
+  border-radius: 10px;
+  background-color: $colorBackgroundForm;
+  @include _screenMobile {
+    width: 360px;
+   //   height: 1232px;
+    height: fit-content;
+    padding: 0px 20px;
+    gap: 24px;
+  }
+  .card__info {
+    width: 646px;
+    height: 212px;
+    display: flex;
+    @include flex(row, space-between, flex-start);
+    gap: 24px;
+    @include _screenMobile {
+      width: 320px;
+      height: 368px;
+      flex-direction: column;
+    }
+    .card__info__avatar {
+      width: 172px;
+      height: 210px;
+      border-radius: 10px;
+      background: $colorSceletonItem;
+    }
+    .card__info__content {
+      width: 450px;
+      height: 212px;
+      display: flex;
+      @include flex(column, flex-start, flex-start);
+      gap: 24px;
+      @include _screenMobile {
+        width: 320px;
+        height: 134px;
+      }
+      .card__info__content__subtitle {
+        width: 238px;
+        height: 20px;
+        border-radius: 100px;
+        background: $colorSceletonItem;
+        @include _screenMobile {
+          width: 228px;
+          height: 18px;
+        }
+      }
+      .card__info__content__title {
+        width: 357px;
+        height: 32px;
+        border-radius: 100px;
+        background: $colorSceletonItem;
+        @include _screenMobile {
+          width: 277px;
+          height: 24px;
+        }
+      }
+      .card__info__content__data {
+        width: 314px;
+        height: 48px;
+        display: flex;
+        @include flex(column, flex-start, flex-start);
+        gap: 16px;
+        @include _screenMobile {
+          width: 314px;
+          height: 44px;
+        }
+        .card__info__content__data__firstEl {
+          width: 187px;
+          height: 16px;
+          border-radius: 100px;
+          background: $colorSceletonItem;
+          @include _screenMobile {
+            width: 187px;
+            height: 14px;
+          }
+        }
+        .card__info__content__data__lastEl {
+          width: 238px;
+          height: 16px;
+          border-radius: 100px;
+          background: $colorSceletonItem;
+          @include _screenMobile {
+            width: 238px;
+            height: 14px;
+          }
+        }
+      }
+    }
+  }
+  .card__about {
+    width: 646px;
+    height: 895px;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 28px;
+    @include _screenMobile {
+      width: 320px;
+      height: 880px;
+      // height: fit-content;
+    }
+    .smallBox {
+      width: 646px;
+      height: 105px;
+      display: flex;
+      @include flex(column, flex-start, flex-start);
+      gap: 20px;
+      @include _screenMobile {
+        width: 320px;
+        height: 96px;
+      }
+      .smallBox__header {
+        width: 646px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: 24px;
+        }
+        .smallBox__header__title {
+          width: fit-content;
+          height: 29px;
+          @include font(24px, $colorText, 500);
+          white-space: nowrap;
+          line-height: 28.8px;
+          text-align: left;
+          @include _screenMobile {
+            width: 168px;
+            height: 24px;
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+        .smallBox__header__period {
+          width: 100%;
+          height: 0;
+          border: 1px solid $colorItemBorder;
+        }
+      }
+      .smallBox__content {
+        width: 646px;
+        height: 56px;
+        padding: 4px 0px;
+        display: flex;
+        @include flex(row, flex-start, flex-start);
+        gap: 95px;
+        @include _screenMobile {
+          width: 320px;
+          height: 52px;
+          padding: 4px 0px;
+          gap: 30px;
+        }
+        .smallBox__content__center {
+          width: 202px;
+          height: 56px;
+          padding: 4px 0px;
+          display: flex;
+          @include flex(column, flex-start, flex-start);
+          gap: 16px;
+          @include _screenMobile {
+            width: 320px;
+            height: 96px;
+            gap: 20px;
+          }
+          .smallBox__content__center__firstItem {
+            width: 202px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 251px;
+               height: 14px;
+             }
+          }
+          .smallBox__content__center__secondItem {
+            width: 151px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 193px;
+               height: 14px;
+             }
+          }
+          .smallBox__content__center__longItem {
+            width: 597px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 320px;
+               height: 14px;
+             }
+          }
+          .smallBox__content__center__shortItem {
+            width: 482px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 267px;
+               height: 14px;
+             }
+          }
+        }
+        .smallBox__content__left {
+          width: 61px;
+          height: 48px;
+          display: flex;
+          @include flex(column, flex-start, flex-start);
+          gap: 16px;
+          @include _screenMobile {
+            width: 61px;
+            height: 46px;
+          }
+          .smallBox__content__left__item {
+            width: 61px;
+            height: 14px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+          }
+        }
+        .smallBox__content__right {
+          width: 490px;
+          height: 48px;
+          display: flex;
+          @include flex(column, flex-start, flex-start);
+          gap: 16px;
+          @include _screenMobile {
+            width: 229px;
+            height: 44px;
+          }
+          .smallBox__content__right__item {
+            width: 177px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 177px;
+               height: 14px;
+             }
+          }
+          .smallBox__content__right__longItem {
+            width: 410px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 229px;
+               height: 14px;
+             }
+          }
+          .smallBox__content__right__shortItem {
+            width: 307px;
+            height: 16px;
+            border-radius: 100px;
+            background: $colorSceletonItem;
+            @include _screenMobile {
+               width: 193px;
+               height: 14px;
+             }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '@/variables';
+@import '@/template';
+
+.workperiod {
+  width: 100%;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 24px;
+  .period {
+    width: 100%;
+  }
+  .period__label {
+    white-space: nowrap;
+    line-height: 19.2px;
+    @include font(16px, $colorText, 500);
+    margin-bottom: 8px;
+    @include _screenMobile {
+      font-size: 14px;
+    }
+  }
+  .disabled {
+    color: $colorTextUnactive;
+  }
+
+  .period__btnwrap {
+    display: flex;
+    @include flex(column, center, center);
+    border: none;
+    background-color: transparent;
+  }
+  .label__wrap {
+    width: 100%;
+    display: flex;
+    @include flex(row, space-between, center);
+    position: relative;
+  }
+  .period__deletebtn {
+    cursor: pointer;
+  }
+  .period__line {
+    margin: 16px;
+    width: 100%;
+    height: 1px;
+    background-color: $colorLine;
+  }
+}
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

@@ -1,0 +1,24 @@
+@import '@/variables';
+@import '@/template';
+
+.form {
+  background-color: $colorBackgroundForm;
+  padding: 40px 32px;
+  border-radius: 10px;
+  @include _screenMobile {
+    padding: 0px;
+  }
+}
+.vacancypage {
+  background-color: transparent;
+  padding: 0px;
+  border-radius: 0px;
+}
+.btn_goback {
+  display: none;
+
+  @include _screenMobile {
+    display: block;
+    margin: 30px 20px;
+  }
+}

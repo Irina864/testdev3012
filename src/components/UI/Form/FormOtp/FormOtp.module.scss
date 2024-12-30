@@ -1,0 +1,55 @@
+@import '@/template';
+@import '@/variables';
+
+.box {
+  display: flex;
+  @include flex(column, flex-start, center);
+  gap: 8px;
+  width: 100%;
+  max-width: 239px;
+  .input {
+    width: 100%;
+    max-width: 154px;
+    height: 56px;
+    padding: 16px 0px 16px 22.5px;
+    display: flex;
+    @include flex(row, center, center);
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    gap: 12px;
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+    text-align: left;
+    letter-spacing: 21.5px;
+    &:active {
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:disabled {
+      background-color: $colorInputDisabled;
+      border: 0.5px solid $colorInputDisabled;
+      color: $colorTextUnactive;
+    }
+  }
+  .errorBorder {
+    border-color: $colorInputBorderError;
+  }
+  .errors_wrap {
+    display: flex;
+    @include flex(column, flex-start, center);
+    gap: 4px;
+  }
+}
+
+.number_input::-webkit-inner-spin-button,
+.number_input::-webkit-outer-spin-button {
+  display: none;
+}
+.number_input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

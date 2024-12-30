@@ -1,0 +1,156 @@
+@import '@/template';
+@import '@/variables';
+
+.progressBar {
+  position: relative;
+  width: 100%; // Используйте относительную ширину
+  height: 100%; // Используйте относительную высоту
+  display: flex; // Используйте flexbox для контейнера
+  flex-direction: column; // Установите направление flexbox
+}
+
+.progressLine {
+  position: absolute;
+  left: 8px;
+  top: 40px; // Начинаем с верхнего отступа
+  bottom: 50px; // Заканчиваем у нижнего отступа
+  width: 8px; // Используйте фиксированную ширину для линии, если это необходимо
+  background-color: #9fa1ab;
+  @include _screenMobile {
+    display: none;
+  }
+}
+
+.progressFill {
+  position: absolute;
+  left: 8px;
+  top: 40px;
+  width: 8px;
+  background-color: #5c75ce;
+  transition: height 0.3s ease;
+  bottom: 100px;
+  @include _screenMobile {
+    display: none;
+  }
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 34px;
+  @include _screenMobile {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.stepMarker {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9fa1ab;
+  border-radius: 50%;
+  background-color: #9fa1ab;
+  margin-right: 20px;
+  z-index: 1;
+  @include _screenMobile {
+    display: none;
+  }
+}
+
+.step.completed .stepMarker {
+  background-color: #5c75ce;
+  border-color: #5c75ce;
+}
+
+.step.active .stepMarker {
+  border-color: #5c75ce;
+}
+
+.stepContent {
+  flex-grow: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  @include _screenMobile {
+    @include font(14px, #7f7f7f, 400);
+    line-height: 16.8px;
+    background-color: transparent;
+    padding: 0px;
+    border-radius: 0px;
+  }
+}
+
+.stepContent h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  @include _screenMobile {
+    @include font(14px, #7f7f7f, 400);
+    line-height: 16.8px;
+  }
+}
+
+.stepContent p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  @include _screenMobile {
+    display: none;
+  }
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step.active .stepContent {
+  background-color: #d7e0f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @include _screenMobile {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.completedText {
+  color: #131315;
+}
+
+.notCompletedText {
+  color: #7f7f7f;
+}
+.none {
+  @include _screenMobile {
+    display: none;
+  }
+}
+.numOfStep {
+  display: none;
+  @include _screenMobile {
+    display: inline;
+  }
+}
+.stepMobileProgress {
+  display: none;
+  @include _screenMobile {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin: 12px 0 0 0;
+    .line {
+      height: 4px;
+      width: 100%;
+      background-color: #9fa1ab;
+      border: none;
+      border-radius: 2px;
+    }
+    .completedStep {
+      transition: width 0.3s ease;
+      background-color: #5c75ce;
+    }
+  }
+}

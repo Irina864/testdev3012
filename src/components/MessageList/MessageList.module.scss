@@ -1,0 +1,24 @@
+@import "@/template";
+@import "@/variables";
+.chatBody {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.messageDate {
+  background-color: $colorButtonBorder;
+  color: $colorLineFooter;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px 16px;
+  border-radius: 14px;
+  max-width: 97px;
+  width: 100%;
+  margin: 24px auto;
+  display: block;
+  white-space: nowrap;
+}

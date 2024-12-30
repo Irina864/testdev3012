@@ -1,0 +1,37 @@
+@import "@/variables";
+@import "@/template";
+
+.btn {
+  padding: 12px 24px;
+  background-color: $colorButtonLight;
+  border: 1px solid $colorButtonBorder;
+  border-radius: 10px;
+  @include font(20px, $colorText, 400);
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $colorButtonLightHover;
+    transition: background-color 0.3s ease;
+  }
+  &:active {
+    background-color: $colorButtonLight;
+    color: $colorButtonLightActive;
+  }
+}
+@media screen and (max-width: 360px) {
+  .btn {
+    width: 320px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8;
+    box-sizing: border-box;
+    border: 0.5px solid $colorButtonBorder;
+    margin: 16px 0px;
+  }
+  .link {
+    text-decoration: none;
+  }
+}

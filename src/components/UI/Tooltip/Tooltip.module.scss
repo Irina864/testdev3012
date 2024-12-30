@@ -1,0 +1,113 @@
+@import '@/variables';
+@import '@/template';
+
+.tooltip {
+  z-index: 50000;
+  position: relative;
+  display: inline-block;
+  display: flex;
+  @include flex(row, center, center);
+  &:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltiptext {
+    z-index: 50000;
+    visibility: hidden;
+    max-width: 260px;
+    min-width: 150px;
+    width: 100%;
+    box-shadow: -1px 1px 20px 0px $borderBlur;
+    background-color: $colorBackgroundForm;
+    @include font(14px, $colorTextUnactive, 400);
+    line-height: 16.8px;
+    border-radius: 10px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 10000;
+    top: 105%;
+    left: 50%;
+    margin-left: -20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    @include _screenMobile {
+      @include font(12px, $colorTextUnactive, 400);
+      line-height: 16.8px;
+      width: 200px;
+      margin-left: -30px;
+
+
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      pointer-events: none;
+    }
+    &::after {
+      border-bottom-color: $colorBackgroundForm;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+    &::before {
+      border-bottom-color: $colorBackgroundForm;
+      border-width: 7px;
+      margin-left: -7px;
+    }
+  }
+  .biggerText {
+    @include font(16px, $colorTextUnactive, 400);
+    line-height: 19.2px;
+  }
+}
+.rightTooltip {
+  .rightTooltipText {
+    margin-left: -200px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 260px;
+    padding: 8px 10px 8px 30.78px;
+    @include _screenMobile {
+      margin-left: -212px;
+      width: 230px;
+      padding: 8px 10px 8px 27px;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 200px;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      pointer-events: none;
+      @include _screenMobile {
+        left: 212px;
+      }
+    }
+    &::after {
+      border-bottom-color: $colorBackgroundForm;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+    &::before {
+      border-bottom-color: $colorBackgroundForm;
+      border-width: 7px;
+      margin-left: -7px;
+    }
+  }
+  .biggerText {
+    @include font(16px, $colorTextUnactive, 400);
+    line-height: 19.2px;
+    @include _screenMobile {
+      @include font(14px, $colorTextUnactive, 400);
+      line-height: 16.8px;
+    }
+  }
+}

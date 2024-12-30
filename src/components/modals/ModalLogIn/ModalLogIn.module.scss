@@ -1,0 +1,203 @@
+@import "@/template";
+@import "@/variables";
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 40px;
+}
+
+.modal_info {
+  // max-height: 95vh;
+  max-height: 100%;
+  width: 100%;
+  max-width: 604px;
+  // max-height: 568px;
+  padding: 60px 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  @include flex(column, flex-start, center);
+  gap: 32px;
+  background-color: $colorBackgroundForm;
+  border-radius: 14px;
+}
+
+.modal_header {
+  width: 100%;
+  max-height: 40px;
+  height: 100%;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 19.87% 1fr 19.87%;
+  align-items: center;
+  .modal_backimgwrap {
+    max-width: 40px;
+    max-height: 40px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    @include flex(column, center, center);
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+    .modal_backimg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .modal_title {
+    @include font(30px, $colorText, 500);
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+
+.modal_wrap {
+  width: 100%;
+  padding: 0 106px;
+  display: flex;
+  @include flex(column, flex-start, center);
+  gap: 48px;
+}
+.modal_content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include flex(column, flex-start, flex-start);
+  gap: 24px;
+  .inputWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+.modal_actions {
+  display: flex;
+  @include flex(row, center, center);
+  gap: 4px;
+  .text {
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+  }
+}
+.link {
+  margin-top: 4px;
+  @include font(20px, $colorLinkBtn, 400);
+  line-height: 24px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    color: $colorLinkBtnHover;
+    cursor: pointer;
+  }
+  &:active {
+    color: $colorLinkBtnActive;
+    cursor: pointer;
+  }
+}
+.btn {
+  margin-top: 16px;
+  width: 100%;
+  height: 52px;
+  @include font(20px, $colorTextLight, 400);
+  line-height: 24px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  background-color: $colorButtonDark;
+  &:hover {
+    background-color: $colorButtonDarkHover;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: $colorButtonDarkActive;
+    cursor: pointer;
+  }
+}
+
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+.underline {
+  text-decoration: underline;
+}
+@media screen and (max-width: 480px) {
+  .modal_overlay {
+    padding: 0;
+  }
+
+  .modal_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    background: rgb(255, 255, 255);
+    padding: 136px 20px;
+    position: relative;
+    overflow-y: auto;
+    gap: 48px;
+  }
+
+  .modal_wrap {
+    padding: 0 20px;
+  }
+
+  .modal_header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+  }
+  .modal_backimgwrap {
+    position: absolute;
+    top: 48px;
+    left: 20px;
+    z-index: 10;
+    width: 24px !important;
+    height: 24px !important;
+    .modal_backimg {
+      width: 100%;
+    }
+  }
+
+  .modal_header .modal_title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .btn,
+  .modal_header_wrap .modal_step,
+  .link,
+  .text {
+    font-size: 18px;
+  }
+
+  .modal_wrap_nextbtns {
+    padding: 0 20px;
+  }
+  .agree_block {
+    font-size: 14px;
+  }
+}

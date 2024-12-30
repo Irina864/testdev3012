@@ -1,0 +1,42 @@
+@import "@/variables";
+@import "@/template";
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  @include _screenMobile {
+    margin: 0;
+  }
+  .nav {
+    margin: 32px 0;
+    display: flex;
+    @include flex(row, space-between, center);
+    width: 100%;
+    @include _screenMobile {
+      // display: none;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 31.61% 65.8%;
+    gap: 32px;
+    width: 100%;
+    .container__aside {
+      width: 392px;
+      height: fit-content;
+      @include _screenMobile {
+        display: flex;
+        @include flex(column, center, center);
+        // display: none;
+      }
+    }
+    .container__content {
+      width: 816px;
+      height: fit-content;
+      @include _screenMobile {
+        display: none;
+      }
+    }
+  }
+}

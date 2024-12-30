@@ -1,0 +1,91 @@
+@import '@/variables';
+@import '@/template';
+
+.title {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  @include _screenMobile {
+    font-size: 14px;
+  }
+}
+
+.textarea {
+  min-width: 100%;
+  min-height: 160px;
+  padding: 15px;
+  border: 1px solid #f4f7ff;
+  border-radius: 8px;
+  background-color: #f4f7ff;
+  @include font(16px, $colorText, 400);
+  resize: none !important; // Запрет растягивания с высоким приоритетом
+
+  transition: border-color 0.3s ease;
+  overflow-y: auto; // Добавляет вертикальный скроллбар при необходимости
+
+  &::-webkit-resizer,
+  &::-moz-resizer,
+  &::-o-resizer,
+  &::-ms-resizer {
+    display: none !important;
+  }
+
+  .textarea::before {
+    border: 1px solid #5c75ce;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #4a77e5; // Убираем стандартный outline при фокусе
+  }
+
+  &.focused {
+    border-color: #4a77e5; // Цвет границы при фокусе
+  }
+
+  &::placeholder {
+    color: #adb5bd;
+    font-family: $font;
+  }
+  @include _screenMobile {
+    @include font(14px, $colorText, 400);
+  }
+}
+
+.form__page5 {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 32px;
+  .box {
+    width: 100%;
+    display: flex;
+    @include flex(row, flex-start, flex-start);
+    gap: calc((32px / 816px) * 100%);
+    .imgwrap {
+      width: calc((172px / 816px) * 100%);
+    }
+    .formbox {
+      width: calc((361px / 816px) * 100%);
+      display: flex;
+      @include flex(column, flex-start, flex-start);
+      gap: 32px;
+    }
+  }
+}
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.aboutSection {
+  padding-right: 20px;
+  @include _screenMobile {
+    margin-top: 30px;
+    margin-bottom: 300px;
+  }
+}

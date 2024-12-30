@@ -1,0 +1,85 @@
+@import "@/template";
+@import "@/variables";
+.cookieBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container,
+.containerShort {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8;
+}
+
+.button {
+  width: 224px;
+  height: 46px;
+}
+.cookieBarShort {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-width: 320px;
+}
+.cookieBarShort,
+.cookieBar {
+  border-radius: 14px;
+  box-shadow: -1px 1px 20px 0px rgba(92, 117, 206, 0.15);
+  background: $colorItem;
+  padding: 12px;
+}
+.cookieBar {
+  height: 97px;
+  display: flex;
+  align-items: center;
+}
+
+.buttonShort,
+.text,
+.link {
+  font-weight: 400;
+  line-height: 1.2;
+}
+.text {
+  color: $colorText;
+  font-size: 14px;
+  text-align: left;
+}
+
+.link {
+  color: $colorTextChangeInfo;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.buttonShort {
+  height: 35px;
+}
+.buttonShort,
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12;
+  padding: 12px 24px;
+  margin: 0px 8px;
+  border-radius: 10px;
+  background: $colorButtonDark;
+  border: none;
+  cursor: pointer;
+  color: $colorTextLight;
+  font-size: 16px;
+  text-align: center;
+  &:hover {
+    background: $colorButtonDarkHover;
+  }
+}

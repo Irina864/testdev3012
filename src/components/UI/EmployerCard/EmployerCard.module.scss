@@ -1,0 +1,162 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 498px;
+  height: 258px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 14px;
+  @include font(20px, $colorText, 400);
+  border: 0.5px solid $colorButtonBorderDisabled;
+  background: $colorBackgroundForm;
+  @include _screenMobile {
+    width: 320px;
+    height: 214px;
+    padding: 20px;
+    gap: 12px;
+  }
+  .card__header {
+    width: 450px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include _screenMobile {
+      width: 280px;
+      height: 36px;
+      display: flex;
+      @include flex(row, space-between, flex-start);
+      gap: 0px;
+    }
+    .card__header__logo {
+      width: 380px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      align-content: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: default;
+      @include _screenMobile {
+        width: 174px;
+        height: 36px;
+        gap: 8px;
+      }
+      .card__header__logo__img {
+        width: 36px;
+        height: 36px;
+        border-radius: 30px;
+      }
+      .card__header__logo__title {
+        @include font(20px, $colorText, 400);
+        line-height: 24px;
+        text-align: left;
+        @include _screenMobile {
+          @include font(18px, $colorText, 400);
+          line-height: 21.6px;
+          text-align: left;
+         //  text-underline-position: from-font;
+         //  text-decoration-skip-ink: none;
+        }
+      }
+    }
+    .card__header__fav {
+      all: unset;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+  .card__title {
+    width: 450px;
+    height: 29px;
+    @include font(24px, $colorText, 500);
+    white-space: nowrap;
+    align-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+    line-height: 28.8px;
+    text-align: left;
+    @include _screenMobile {
+      width: 280px;
+      height: 24px;
+      @include font(20px, $colorText, 500);
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+  .card__data {
+    width: 450px;
+    height: 56px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    @include _screenMobile {
+      width: 280px;
+      height: 56px;
+      display: flex;
+      @include flex(column, flex-start, center);
+      gap: 8px;
+    }
+    .card__data__city,
+    .card__data__exp {
+      width: 450px;
+      height: 24px;
+      display: flex;
+      gap: 4px;
+      white-space: nowrap;
+      align-content: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: default;
+      @include _screenMobile {
+         width: 280px;
+         height: 24px;
+         display: flex;
+         @include flex(row, flex-start, center);
+         gap: 4px;
+       }
+    }
+    .card__data__img {
+      width: 24px;
+      height: 24px;
+    }
+    .card__data__title {
+      width: fit-content;
+      height: 19px;
+      @include font(16px, $colorTextUnactive, 400);
+      line-height: 19.2px;
+      text-align: left;
+      @include _screenMobile {
+         width: fit-content;
+         height: 17px;
+         @include font(14px, $colorTextUnactive, 400);
+         line-height: 16.8px;
+         text-align: left;
+      }
+    }
+  }
+  .card__salary {
+    @include font(24px, $colorText, 500);
+    line-height: 28.8px;
+    text-align: left;
+    // font-weight: bold;
+    cursor: default;
+    @include _screenMobile {
+      width: fit-content;
+      height: 22px;
+      @include font(18px, $colorText, 500);
+      line-height: 21.6px;
+      text-align: left;
+    }
+  }
+}
+.card_active {
+  border: 2px solid $colorItemBorder;
+}

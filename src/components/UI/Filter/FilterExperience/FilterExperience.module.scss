@@ -1,0 +1,49 @@
+@import "@/variables";
+@import "@/template";
+
+.experience {
+  width: 100%;
+  max-width: 334px;
+  padding: 28px 32px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 8px;
+  background-color: $colorBackgroundForm;
+  border: none;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  z-index: 10;
+  .inputWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .box {
+      display: flex;
+      @include flex(row, flex-start, flex-end);
+      gap: 20px;
+      flex-wrap: wrap;
+      > div {
+        max-width: 125px;
+      }
+    }
+  }
+}
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+@media screen and (max-width: 580px) {
+  .experience {
+    box-shadow: none;
+    padding: 0;
+    .inputWrapper {
+      .box {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        > div {
+          max-width: 154px;
+        }
+      }
+    }
+  }
+}

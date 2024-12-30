@@ -1,0 +1,38 @@
+@import '@/variables';
+@import '@/template';
+
+.box {
+  position: relative;
+  .form {
+    background-color: $colorBackgroundForm;
+    padding: 48px 20px 48px 40px;
+    border-radius: 10px;
+    @include _screenMobile {
+      padding: 0px;
+      border-radius: 0px;
+      width: 100%;
+    }
+  }
+}
+
+.form_dark {
+  z-index: 5;
+  background-color: $colorBackgroundGrey;
+  opacity: 50%;
+  border-radius: 10px;
+}
+
+.calendarWrapperAll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: $colorBackgroundForm;
+  border: 1px solid $colorBackgroundForm;
+  border-radius: 10px;
+}
+
+.form_disabled {
+  pointer-events: none;
+}

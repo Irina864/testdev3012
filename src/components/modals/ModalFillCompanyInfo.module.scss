@@ -1,0 +1,281 @@
+@import "@/template";
+@import "@/variables";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 48px 40px;
+  max-width: 816px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+
+}
+
+.formModal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.formFields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  color: $colorText;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+}
+.formInput,
+.formInputDescription {
+  color: rgb(19, 19, 21);
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(244, 247, 255);
+}
+.formInput {
+  max-width: 392px;
+  height: 46px;
+  padding: 0 20px;
+  &:active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:focus {
+    outline: none;
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+  }
+}
+
+.formInputDescription {
+  max-width: 584px;
+  padding: 10px;
+  resize: none;
+  &:active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:focus {
+    outline: none;
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  order: 1;
+  align-self: flex-start;
+}
+
+.formIcon {
+  // color: rgb(217, 217, 217);
+  background-color: $colorInput;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.addressForm {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.infoContainer {
+  display: none;
+}
+.addAddressLink {
+  position: absolute;
+  right: 25px;
+  top: 60%;
+  transform: translateY(-50%);
+  color: rgb(0, 64, 227);
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration-line: underline;
+  white-space: nowrap;
+}
+.errorMessage {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.errorIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; // Круглая иконка
+}
+.errorText {
+  color: rgb(213, 39, 39);
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 392px;
+}
+.errorBorder {
+  border: 0.5px solid rgb(213, 39, 39) !important;
+}
+.addressCompany {
+  padding-left: 1rem;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.backButton,
+.nextButton {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: $font;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.backButton {
+  border: 0.5px solid $colorButtonBorder;
+  color: $colorText;
+  background-color: $colorButtonLight;
+  &:hover {
+    background-color: $colorButtonLightHover;
+  }
+
+  &:active {
+    background-color: #e7edff;
+  }
+}
+
+.nextButton {
+  background-color: $colorButtonDark;
+  color: $colorTextLight;
+  border: none;
+  &:hover {
+    background-color: $colorButtonDarkHover;
+  }
+
+  &:active {
+    background-color: $colorButtonDarkActive;
+  }
+}
+.buttonLogo {
+  @include font(16px, $colorLinkBtn, 400);
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  &:hover {
+    color: $colorLinkBtnHover;
+    cursor: pointer;
+  }
+  &:active {
+    color: $colorLinkBtnActive;
+  }
+  &:disabled {
+    color: $colorTextUnactive;
+    pointer-events: none;
+  }
+}
+@media screen and (max-width: 360px) {
+  .infoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    .infoTitle {
+      color: $colorText;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 120%;
+    }
+  }
+  .modalOverlay {
+    align-items: flex-start;
+  }
+  .modalContent {
+    border-radius: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+  }
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoContainer {
+    order: -1;
+    margin-bottom: 24px;
+    width: 100%;
+    justify-content: center;
+  }
+  .formInput,
+  .formInputDescription {
+    width: 320px;
+    max-width: 100%;
+  }
+  .formActions {
+    justify-content: center;
+    gap: 12px;
+  }
+}

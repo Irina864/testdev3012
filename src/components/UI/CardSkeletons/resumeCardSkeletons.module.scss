@@ -1,0 +1,121 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 498px;
+  height: 257px;
+  padding: 24px;
+  border-radius: 14px;
+  border: 0.5px solid $colorInput;
+  background-color: $colorBackgroundForm;
+  box-shadow: 2px 2px 6px 0px $colorShadowCardsSkeleton;
+  display: flex;
+  @include flex(column, space-between, flex-start);
+  @include _screenMobile {
+    width: 320px;
+    height: 218px;
+    padding: 20px;
+  }
+  .card__header {
+    width: 450px;
+    height: 40px;
+    display: flex;
+    @include flex(row, space-between, center);
+    @include _screenMobile {
+      width: 280px;
+      height: 36px;
+    }
+    .card__header__left {
+      width: 280px;
+      height: 40px;
+      display: flex;
+      @include flex(row, space-between, center);
+      gap: 12px;
+      @include _screenMobile {
+        width: 185px;
+        height: 36px;
+      }
+      .card__header__left__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        background: $colorSceletonItem;
+        @include _screenMobile {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .card__header__left__title {
+        width: 228px;
+        height: 22px;
+        border-radius: 100px;
+        background: $colorSceletonItem;
+        @include _screenMobile {
+          width: 137px;
+          height: 18px;
+        }
+      }
+    }
+    .card__header__right {
+      width: 48px;
+      height: 18px;
+      border-radius: 100px;
+      background: $colorSceletonItem;
+      @include _screenMobile {
+        width: 48px;
+        height: 16px;
+      }
+    }
+  }
+  .card__subtitle {
+    width: 357px;
+    height: 24px;
+    border-radius: 100px;
+    background: $colorSceletonItem;
+    @include _screenMobile {
+      width: 220px;
+      height: 20px;
+    }
+  }
+  .card__content {
+    width: 226px;
+    height: 44px;
+    display: flex;
+    @include flex(column, space-between, flex-start);
+    gap: 12px;
+    @include _screenMobile {
+      width: 160px;
+      height: 40px;
+    }
+    .card__content__firstEl {
+      width: 226px;
+      height: 16px;
+      border-radius: 100px;
+      background: $colorSceletonItem;
+      @include _screenMobile {
+        width: 160px;
+        height: 14px;
+      }
+    }
+    .card__content__lastEl {
+      width: 139px;
+      height: 16px;
+      border-radius: 100px;
+      background: $colorSceletonItem;
+      @include _screenMobile {
+        width: 91px;
+        height: 14px;
+      }
+    }
+  }
+  .card__footer {
+    width: 226px;
+    height: 22px;
+    border-radius: 100px;
+    background: $colorSceletonItem;
+    @include _screenMobile {
+      width: 160px;
+      height: 18px;
+    }
+  }
+}

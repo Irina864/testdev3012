@@ -1,0 +1,91 @@
+@import "@/template";
+@import "@/variables";
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: $colorBackgroundForm;
+  border-radius: 14px;
+  padding: 60px;
+  max-width: 604px;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    color: $colorText;
+    font-family: $font;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  p {
+    color: #222222;
+    font-family: $font;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 52px;
+  }
+
+  .modal_buttons {
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 32px);
+  }
+  .modal_buttons a {
+    text-decoration: none;
+  }
+
+  .button {
+    border-radius: 10px;
+    font-family: $font;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    display: flex;
+    @include flex(row, center, center);
+    width: 226px;
+    height: 46px;
+    text-transform: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:first-child {
+      border: 0.5px solid $colorButtonBorder;
+      color: $colorText;
+      background-color: $colorButtonLight;
+
+      &:hover {
+        background-color: $colorButtonLightHover;
+      }
+
+      &:active {
+        background-color: #e7edff;
+      }
+    }
+
+    &:last-child {
+      background-color: $colorButtonDark;
+      color: $colorTextLight;
+      border: none;
+
+      &:hover {
+        background-color: $colorButtonDarkHover;
+      }
+
+      &:active {
+        background-color: $colorButtonDarkActive;
+      }
+    }
+  }
+}

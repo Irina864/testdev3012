@@ -1,0 +1,204 @@
+@import '@/variables';
+@import '@/template';
+.inputSearch {
+  width: 100%;
+  height: 48px;
+  padding: 15.5px 56px 15.5px 48px;
+  background-color: $colorBackgroundForm;
+  border: none;
+  border-radius: 14px;
+  box-shadow: -1px 1px 20px 0px #5c75ce26;
+  @include font(14px, $colorText, 400);
+  line-height: 16.8px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &:active {
+    color: $colorTextActive;
+    border: none;
+    box-shadow: -1px 1px 20px 0px #5c75ce4d;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: -1px 1px 20px 0px #5c75ce26;
+  }
+
+  ::placeholder {
+    @include font(14px, $colorTextUnactive, 400);
+    line-height: 16.8px;
+  }
+}
+.filterMain {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  @include flex(row, space-between, center);
+  gap: 16px;
+  background-color: $colorBackground;
+  .filterButton {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    @include flex(row, center, center);
+    border: none;
+    border-radius: 6px;
+    background-color: $colorItemActive;
+  }
+  .filterInputWrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    .dropdownWrapper {
+      position: absolute;
+      top: 56px;
+      width: 100%;
+    }
+  }
+  .searchFormWrapper {
+    position: relative;
+    width: 100%;
+    .searchButton,
+    .cleanInput {
+      position: absolute;
+      display: flex;
+      @include flex(row, center, center);
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+    .searchButton {
+      top: 8px;
+      left: 8px;
+      .searchLink {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        @include flex(row, center, center);
+      }
+    }
+    .cleanInput {
+      top: 14px;
+      right: 18px;
+    }
+  }
+}
+// .filterMobile {
+//   width: 100%;
+//   padding: 20px;
+//   background-color: #f5f6fd;
+//   position: relative;
+// }
+
+// .filterContainer {
+//   position: relative;
+// }
+
+// .filterInitial {
+//   display: flex;
+//   gap: 16px;
+//   align-items: center;
+// }
+
+// .searchWrapper {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   gap: 8px;
+//   align-items: center;
+//   border: none;
+//   border-radius: 14px;
+//   box-shadow: -1px 1px 20px 0px $borderBlur;
+//   background: $colorBackgroundForm;
+//   text-align: center;
+//   padding: 0 8px;
+// }
+
+// .searchInput {
+//   padding: 12px;
+//   border: none;
+//   outline: none;
+//   font-size: 16px;
+//   background: transparent;
+
+//   &::placeholder {
+//     color: $colorTextUnactive;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 120%;
+//   }
+// }
+
+// .searchButton {
+//   display: flex;
+//   align-items: center;
+//   width: 32px;
+//   height: 32px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+// }
+
+// .filterButton {
+//   background-color: $colorIconBackground;
+//   border: none;
+//   cursor: pointer;
+//   border-radius: 6px;
+//   width: 32px;
+//   height: 32px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   transition: background-color 0.2s;
+//   padding: 0 16px;
+
+//   &:hover {
+//     background-color: #c0cff7;
+//   }
+
+//   &:active {
+//     background-color: #a9bef5;
+//   }
+// }
+
+// .inputWrapper {
+//   width: 100%;
+// }
+
+// .filterInput {
+//   width: 100%;
+//   padding: 12px;
+//   border: 1px solid #e5e7eb;
+//   border-radius: 8px;
+//   font-size: 16px;
+//   outline: none;
+//   background: white;
+
+//   &::placeholder {
+//     color: #9ca3af;
+//   }
+
+//   &:focus {
+//     border-color: #2563eb;
+//   }
+// }
+
+// .dropdownWindows {
+//   position: absolute;
+//   width: 100%;
+//   z-index: 1000;
+// }
+
+// @keyframes slideDown {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }

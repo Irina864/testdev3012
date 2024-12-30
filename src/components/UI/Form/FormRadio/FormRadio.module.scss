@@ -1,0 +1,88 @@
+@import '@/template';
+@import '@/variables';
+
+.container {
+  width: 334px;
+  height: 40px;
+  padding: 8px 0px 8px 0px;
+  // margin: 10.5px 0;
+  display: flex;
+  @include flex(row, flex-start, center);
+  gap: 12px;
+
+  .label {
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+    }
+  }
+  .box {
+    display: flex;
+    @include flex(row, flex-start, center);
+    gap: 12px;
+    .label {
+      padding: 12px 24px;
+      border: 0.5px solid $colorButtonBorder;
+      border-radius: 10px;
+      @include font(16px, $colorText, 400);
+      line-height: 19.2px;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        background-color: $colorButtonLightHover;
+      }
+    }
+
+    .input {
+      display: none;
+
+      &:checked + .label {
+        color: $colorButtonLightActive;
+      }
+    }
+  }
+  .modal {
+    @include font(20px, $colorText, 400);
+    line-height: 24px;
+  }
+}
+.radio {
+  display: flex;
+  @include flex(row, center, center);
+  input[type='radio'] {
+    display: none;
+
+    + label {
+      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid $colorCheckboxBorder;
+      border-radius: 50%;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:checked + label {
+      border-color: $colorCheckboxBorderActive;
+
+      &:after {
+        background: $colorCheckboxBorderActive;
+      }
+    }
+  }
+}

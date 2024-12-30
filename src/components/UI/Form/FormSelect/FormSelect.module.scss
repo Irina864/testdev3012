@@ -1,0 +1,198 @@
+@import '@/template';
+@import '@/variables';
+
+.select__wrapper {
+  position: relative;
+  display: inline-block;
+  .select {
+    width: 100%;
+    min-width: 93px;
+    padding: 8px 16px;
+    height: 46px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    @include flex(column, center, flex-start);
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    @include font(16px, $colorText, 400);
+    text-align: left;
+    appearance: none;
+    cursor: pointer;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+  }
+
+  .active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  .disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+  }
+  .select__arrow {
+    content: '';
+    position: absolute;
+    right: 23px;
+    top: 39%;
+    width: 6.5px;
+    height: 6.5px;
+    border: solid $colorArrow;
+    border-width: 0 1px 1px 0;
+    transform: rotate(135deg) scaleY(-1);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+
+  .open {
+    transform: translateY(75%) rotate(225deg);
+  }
+}
+
+.select__wrapper_vacancy {
+  position: relative;
+  display: inline-block;
+  .select {
+    min-width: 161px;
+    max-width: 182px;
+    height: 46px;
+    padding: 8px 16px 8px 16px;
+    border-radius: 10px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    @include flex(column, center, flex-start);
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    @include font(16px, $colorText, 400);
+    text-align: left;
+    appearance: none;
+    cursor: pointer;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+  }
+  .active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  .disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorTextUnactive;
+    pointer-events: none;
+  }
+  .select__arrow {
+    content: '';
+    position: absolute;
+    right: 23px;
+    top: 39%;
+    width: 6.5px;
+    height: 6.5px;
+    border: solid $colorArrow;
+    border-width: 0 1px 1px 0;
+    transform: rotate(135deg) scaleY(-1);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+
+  .open {
+    transform: translateY(75%) rotate(225deg);
+  }
+}
+.menu__wrap {
+  position: absolute;
+  width: 100%;
+  max-height: 228px;
+  top: 54px;
+  left: 0px;
+  padding: 16px 8px;
+  background-color: $colorBackgroundForm;
+  border: none;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  z-index: 1000;
+  @include _screenMobile {
+    padding: 16px 0;
+  }
+
+  .menu {
+    max-height: 196px;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 12px;
+    @include _screenMobile {
+      width: 100%;
+      padding: 0;
+      scrollbar-width: none;
+    }
+  }
+  .option {
+    padding: 12px 12px 12px 16px;
+    min-width: 33px;
+    background-color: $colorBackgroundForm;
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    text-align: left;
+    width: 100%;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+      line-height: 16.8px;
+      padding: 12px 12px 12px 24px;
+    }
+
+    &:hover {
+      border-radius: 14px;
+      background-color: $colorCheckboxHover;
+      cursor: pointer;
+      @include _screenMobile {
+        border-radius: 0;
+      }
+    }
+    &:active {
+      border-radius: 14px;
+      background-color: $colorCheckboxActive;
+      cursor: pointer;
+      @include _screenMobile {
+        border-radius: 0;
+      }
+    }
+    .deletebtn {
+      display: flex;
+      @include flex(column, center, center);
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+.placeholder {
+  @include font(16px, $colorTextUnactive, 400);
+  line-height: 19.2px;
+  text-align: left;
+  @include _screenMobile {
+    @include font(14px, $colorText, 400);
+    line-height: 16.8px;
+  }
+}
+.bottom {
+  position: absolute;
+  top: -232px;
+}

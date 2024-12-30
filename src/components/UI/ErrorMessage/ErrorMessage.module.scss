@@ -1,0 +1,57 @@
+@import '@/variables';
+@import '@/template';
+
+.errorbox {
+  display: flex;
+  @include flex(row, flex-start, center);
+  flex-wrap: nowrap;
+  gap: 5px;
+
+  .errorimg {
+    align-self: center;
+    margin: auto 0;
+  }
+  .errortext {
+    display: flex;
+    @include flex(row, flex-start, center);
+    @include font(14px, $colorTextError, 400);
+    line-height: 16.8px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    @include _screenMobile {
+      @include font(12px, $colorTextError, 400);
+      line-height: 14.4px;
+    }
+  }
+  .biggerText {
+    display: flex;
+    @include flex(row, flex-start, center);
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 19.2px;
+    font-size: 16px;
+    @include _screenMobile {
+      @include font(14px, $colorTextError, 400);
+      line-height: 16.8px;
+    }
+  }
+  .center {
+    display: flex;
+    @include flex(row, center, center);
+    text-align: center;
+  }
+}
+
+// .biggerText {
+//   line-height: 19.2px;
+//   font-size: 16px;
+// }
+// .center {
+//   display: flex;
+//   @include flex(row, center, center);
+//   text-align: center;
+// }

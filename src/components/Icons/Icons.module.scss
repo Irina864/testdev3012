@@ -1,0 +1,71 @@
+@import "@/variables";
+@import "@/template";
+
+.iconbox {
+  max-width: 194px;
+  height: 46px;
+  display: flex;
+  @include flex(row, flex-end, center);
+  gap: 12px;
+  .btnicon {
+    background-color: $colorIconBackground;
+    height: 46px;
+    width: 46px;
+    border: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .fav {
+    padding-top: 2.75px;
+    width: 46px;
+  }
+  .active {
+    background-color: $colorIconBackgroundActive;
+  }
+}
+
+@media screen and (min-width: 361px) {
+  .text {
+    display: none;
+  }
+}
+@media screen and (max-width: 360px) {
+  .iconWithText {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 10px 0px 10px 20px;
+  }
+
+  .iconbox {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 16px 0px;
+    gap: 0;
+  }
+  .btnicon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .text {
+    color: rgb(19, 19, 21);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: left;
+    padding-left: 12px;
+    text-decoration: none;
+  }
+  .link {
+    text-decoration: none;
+  }
+}

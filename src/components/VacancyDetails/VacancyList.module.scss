@@ -1,0 +1,78 @@
+.vacancyList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 498px;
+  width: 100%;
+  .vacancyItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20;
+    padding: 24px;
+
+    position: relative;
+
+    border-radius: 14px;
+    box-shadow: -1px 1px 20px 0px rgba(92, 117, 206, 0.15);
+    background: rgb(255, 255, 255);
+  }
+}
+.icons {
+  position: absolute;
+  cursor: pointer;
+
+  bottom: 26px;
+  right: 26px;
+  display: flex;
+  gap: 16px;
+  .icon {
+    width: 18px;
+    height: 21px;
+  }
+}
+.experience_container,
+.location_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+  img {
+    width: 15px;
+    height: 19px;
+  }
+}
+.active {
+  border: 2px solid rgb(92, 117, 206);
+}
+.vacancy_title {
+  color: rgb(19, 19, 21);
+  font-size: clamp(16px, 1.5vw + 1rem, 24px);
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.experience,
+.location,
+.left_days {
+  color: rgb(127, 127, 127);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.experience_container {
+  margin-bottom: 8px;
+}
+.location_container {
+  margin-bottom: 20px;
+}
+.salary {
+  /* Window/Subheader/Medium/SH2 */
+  color: rgb(19, 19, 21);
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}

@@ -1,0 +1,25 @@
+@import "@/variables";
+@import "@/template";
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  .nav {
+    margin: 32px 0;
+    display: flex;
+    @include flex(row, space-between, center);
+    width: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 31.61% 65.8%;
+    gap: 32px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .main {
+    margin: 40px 20px;
+  }
+}

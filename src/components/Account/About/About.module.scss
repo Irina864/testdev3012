@@ -1,0 +1,111 @@
+@import '@/template';
+@import '@/variables';
+.form {
+  // без необходимости лучше не использовать абсолютное позиционирование - это выбивает из общего потока
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include _screenMobile {
+    padding: 20px 0;
+  }
+  .formCard {
+    display: flex;
+    flex-direction: column;
+    // gap: 24 -  не работал, так как не было рх
+    gap: 24px;
+    margin-bottom: 32px;
+
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+
+      //Паддинг сильно смещает в сторону - не соответствует макету
+      // padding: 0.5rem 1rem;
+    }
+
+    .label {
+      //  не $colorTextUnactive, здесь просто $colorText
+      color: $colorText;
+      margin-bottom: 8px;
+    }
+
+    .input {
+      border: none;
+      outline: none;
+      width: 100%;
+      border-radius: 10px;
+      background-color: rgb(244, 247, 255);
+      &:focus {
+        outline: none;
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:active {
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:focus {
+        outline: none;
+        border: 0.5px solid $colorInputBorderActive;
+      }
+      &:disabled {
+        background-color: $colorInputDisabled;
+        border: 0.5px solid $colorInputDisabled;
+        color: $colorText;
+      }
+    }
+
+    .errorMessage {
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+
+      .errorIcon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+
+      .errorText {
+        color: rgb(213, 39, 39);
+        font-family: $font;
+        font-size: 14px;
+      }
+    }
+    .errorBorder {
+      border: 0.5px solid rgb(213, 39, 39) !important;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.button {
+  // position: absolute;
+  // right: 0px;
+  align-self: flex-end;
+  background-color: $colorButtonDark;
+  color: $colorTextLight;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: $font;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: $colorButtonDarkHover;
+  }
+
+  &:active {
+    background-color: $colorButtonDarkActive;
+  }
+  @include _screenMobile {
+    width: 100%;
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+.notification {
+  z-index: 20;
+  position: absolute;
+  top: 128px;
+  right: 0;
+}

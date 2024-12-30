@@ -1,0 +1,111 @@
+@import "@/variables";
+@import "@/template";
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  @include _screenMobile {
+    width: 360px;
+    height: fit-content;
+    // height: 1497px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    @include flex(column, flex-start, center);
+    gap: 40px;
+    background: $colorBackgroundForm;
+  }
+  .nav {
+    margin: 32px 0;
+    display: flex;
+    @include flex(row, space-between, center);
+    width: 100%;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 40.16% 57.26%;
+    gap: 32px;
+    width: 100%;
+    width: 1240px;
+    height: fit-content;
+    // height: 1,365px;
+    @include _screenMobile {
+      width: 360px;
+    }
+    .container__aside {
+      width: 498px;
+      height: fit-content;
+      // height: 822px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @include _screenMobile {
+        width: 360px;
+        height: 803px;
+        display: flex;
+        @include flex(column, flex-start, center);
+        gap: 24px;
+        // display: none;
+      }
+      .container__aside__message {
+        width: 498px;
+        height: 67px;
+        padding: 24px;
+        gap: 12px;
+        border-radius: 14px;
+        background: $colorBackgroundForm;
+        .container__aside__message__txt {
+          width: 450px;
+          height: 19px;
+          @include font(16px, $colorText, 500);
+          line-height: 19.2px;
+          text-align: left;
+        }
+      }
+    }
+    .container__descBox {
+      @include _screenMobile {
+        display: none;
+      }
+    }
+    .container__content {
+      padding: 40px 32px;
+      width: 710px;
+      height: fit-content;
+      min-height: 738px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      border-radius: 10px;
+      background: $colorBackgroundForm;
+      @include _screenMobile {
+        width: 360px;
+        height: fit-content;
+        padding: 0px 20px;
+        gap: 8px;
+      }
+      .container__content__Box {
+        @include _screenMobile {
+          width: 360px;
+          height: 34px;
+          
+        }
+        .container__content__Box__message {
+          width: 646px;
+          height: 43px;
+          border-bottom: 1px solid $colorButtonBorder;
+          @include font(18px, $colorTextUnactive, 400);
+          line-height: 23.4px;
+          text-align: center;
+          @include _screenMobile {
+            width: 320px;
+            height: 34px;
+            @include font(14px, $colorTextUnactive, 400);
+            line-height: 16.8px;
+          }
+        }
+      }
+    }
+  }
+}

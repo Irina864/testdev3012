@@ -1,0 +1,16 @@
+@import '@/variables';
+@import '@/template';
+
+// стиль nav
+.nav {
+  padding: 50px;
+  display: flex;
+  @include flex(row, flex-start, flex-start);
+  gap: 150px;
+
+  > ol {
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 25px;
+  }
+}

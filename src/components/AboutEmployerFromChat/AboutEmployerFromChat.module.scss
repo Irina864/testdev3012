@@ -1,0 +1,135 @@
+@import "@/template";
+@import "@/variables";
+.grid {
+  display: grid;
+  grid-template-columns: 392px 1fr;
+  width: 100%;
+  gap: 32px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 342px;
+}
+
+.sidebarContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: $colorBackgroundForm;
+  border-radius: 10px;
+}
+
+.mainContent {
+  padding: 48px 40px;
+  background: $colorBackgroundForm;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      color: $colorText;
+    }
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: $colorText;
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: #131315;
+}
+.paragraph2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+.divider {
+  border: none;
+  border-top: 1px solid rgb(92, 117, 206);
+  width: 100%;
+}
+.paragraph {
+  font-weight: 400;
+  font-size: 18px;
+  color: #131315;
+  margin-top: 24px;
+}
+.mobileLogo,
+.titleContainer {
+  display: none;
+}
+
+.link {
+  color: $colorTextChangeInfo;
+  text-decoration: underline;
+}
+.paragraph {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+}
+@media screen and (max-width: 360px) {
+  .header .logoContainer,
+  .divider,
+  .title {
+    display: none;
+  }
+  .titleContainer,
+  .titleCompany {
+    display: block;
+  }
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .mobileLogo {
+    display: block;
+    width: 320px;
+    max-width: 100%;
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .sidebarContent,
+  .mainContent {
+    width: 320px;
+    max-width: 100%;
+    padding: 16px;
+  }
+  .sidebarContent {
+    box-shadow: -1px 1px 20px 0px rgba(92, 117, 206, 0.15);
+  }
+}

@@ -1,0 +1,150 @@
+@import "@/template";
+@import "@/variables";
+
+.chat {
+   width: 372px;
+   height: 100px;
+   display: flex;
+   gap: 12px;
+   padding: 16px;
+   border-radius: 14px;
+   background: $colorItem;
+   cursor: pointer;
+   @include _screenMobile {
+     width: 320px;
+     height: 92px;
+     padding: 12px 16px 12px 12px;
+   }
+   .chat__avatar {
+     position: relative;
+     width: 56px;
+     height: 56px;
+     border-radius: 30px;
+   }
+   .chat__avatar__span {
+     // position: absolute;
+     z-index: 10;
+     width: 10px;
+     height: 10px;
+     border-radius: 100px;
+     // top: 325px;
+     // left: 152px;
+     margin-left: -26px;
+     margin-top: 45px;
+     background-color: $colorTextSuccess;
+   }
+   .chat__content {
+     width: 272px;
+     height: 68px;
+     display: flex;
+     flex-direction: column;
+     gap: 4px;
+     justify-content: center;
+     @include font(16, $colorTextUnactive, 400);
+     @include _screenMobile {
+       width: 224px;
+       height: 65px;
+       gap: 8px;
+     }
+     .chat__content__title {
+       display: flex;
+       width: 272px;
+       height: 19px;
+       gap: 12px;
+       line-height: 19.2px;
+       text-align: left;
+       @include _screenMobile {
+         width: 224px;
+         height: 38px;
+         gap: 4px;
+       }
+       .chat__content__title__header {
+         width: 224px;
+         height: 19px;
+         @include font(16px, $colorText, 500);
+         @include _screenMobile {
+           width: 224px;
+           height: 17px;
+         }
+       }
+       .chat__content__title__time {
+         width: fit-content;
+         @include font(16, $colorTextUnactive, 400);
+         @include _screenMobile {
+           font-size: 14px;
+           line-height: 16.8px;
+           text-align: left;
+         }
+       }
+     }
+     .chat__content__middle {
+       display: flex;
+       @include _screenMobile {
+         width: 224px;
+         height: 17px;
+       }
+
+       .chat__content__middle__message {
+         width: 272px;
+         height: 19px;
+         // gap: 28px;
+         padding-right: 64px;
+         font-size: 16;
+         white-space: nowrap;
+         // align-content: center;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         @include font(16, $colorTextUnactive, 400);
+         @include _screenMobile {
+           width: 224px;
+           height: 17px;
+           font-size: 14px;
+           line-height: 16.8px;
+           text-align: left;
+         }
+       }
+       .chat__content__middle__net {
+         width: 16px;
+         height: 16px;
+         border-radius: 100px;
+         background-color: $colorCircleActive;
+       }
+     }
+     .chat__content__status {
+       width: 252px;
+       height: 19px;
+       margin-top: 4px;
+       @include font(16, $colorCircleActive, 400);
+       @include _screenMobile {
+         width: 224px;
+         height: 17px;
+         font-size: 14px;
+         line-height: 16.8px;
+         text-align: left;
+       }
+     }
+     .chat__content__status_invitation {
+      @include font(16, $colorTextSuccess, 400);
+      @include _screenMobile {
+         width: 224px;
+         height: 17px;
+         font-size: 14px;
+         line-height: 16.8px;
+         text-align: left;
+       }
+     }
+     .chat__content__status_refusal {
+      @include font(16, $colorTextError, 400);
+      @include _screenMobile {
+         width: 224px;
+         height: 17px;
+         font-size: 14px;
+         line-height: 16.8px;
+         text-align: left;
+       }
+     }
+   }
+ }
+ .chat_active {
+   background: $colorIconBackground;
+ }

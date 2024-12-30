@@ -1,0 +1,88 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 372px;
+  height: 100px;
+  border-radius: 14px;
+  background: $colorBackgroundForm;
+  padding: 16px;
+  display: flex;
+  @include flex(row, center, center);
+  gap: 6px;
+  @include _screenMobile {
+    width: 320px;
+    height: 92px;
+    padding: 12px;
+    gap: 12px;
+  }
+  .card__logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 100px;
+    background: $colorFilterBackgroundActive;
+  }
+  .card__data {
+    width: 272px;
+    height: 68px;
+    padding-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include _screenMobile {
+      width: 228px;
+      height: 68px;
+      justify-content: space-between;
+    }
+    .card__data__title {
+      width: 272px;
+      height: 14px;
+      display: flex;
+      justify-content: space-between;
+      @include _screenMobile {
+        width: 228px;
+        height: 12px;
+      }
+      .card__data__title__left {
+        width: 84px;
+        height: 14px;
+        border-radius: 100px;
+        background: $colorFilterBackgroundActive;
+        @include _screenMobile {
+         width: 84px;
+         height: 12px;
+       }
+      }
+      .card__data__title__right {
+        width: 44px;
+        height: 14px;
+        border-radius: 100px;
+        background: $colorFilterBackgroundActive;
+        @include _screenMobile {
+         width: 44px;
+         height: 12px;
+       }
+      }
+    }
+    .card__data__content {
+      width: 195px;
+      height: 14px;
+      border-radius: 100px;
+      background: $colorFilterBackgroundActive;
+      @include _screenMobile {
+         width: 153px;
+         height: 12px;
+       }
+    }
+    .card__data__footer {
+      width: 135px;
+      height: 14px;
+      border-radius: 100px;
+      background: $colorFilterBackgroundActive;
+      @include _screenMobile {
+         width: 117px;
+         height: 12px;
+       }
+    }
+  }
+}

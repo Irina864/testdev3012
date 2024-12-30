@@ -1,0 +1,470 @@
+@import "@/template";
+@import "@/variables";
+
+.card {
+  width: 710px;
+  height: fit-content;
+  min-height: 1365px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 10px;
+  background: $colorBackgroundForm;
+  @include _screenMobile {
+    width: 360px;
+    //  height: 2516px;
+    height: fit-content;
+    padding: 0px 20px;
+    gap: 24px;
+  }
+  .card__info {
+    width: 646px;
+    height: fit-content;
+    display: flex;
+    gap: 24px;
+    @include _screenMobile {
+      width: 320px;
+      height: 476px;
+      // height: fit-content;
+      flex-direction: column;
+    }
+    .card__info__img {
+      width: 172px;
+      height: 210px;
+      border-radius: 10px;
+    }
+    .card__info__data {
+      width: 450px;
+      height: fit-content;
+      // gap: 24px;
+      @include _screenMobile {
+        width: 320px;
+        height: fit-content;
+      }
+      .head {
+        width: 450px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+        }
+        .head__title {
+          width: 450px;
+          height: 72px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          @include _screenMobile {
+            width: 320px;
+            height: 60px;
+          }
+          .head__title__name {
+            width: 450px;
+            height: 24px;
+            @include font(20px, $colorText, 400);
+            line-height: 24px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include _screenMobile {
+              width: 320px;
+              height: 22px;
+              font-size: 18px;
+              line-height: 21.6px;
+            }
+          }
+          .head__title__position {
+            width: 450px;
+            height: 36px;
+            @include font(30px, $colorText, 500);
+            line-height: 36px;
+            letter-spacing: 0.02em;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include _screenMobile {
+              width: 320px;
+              height: 26px;
+              font-size: 22px;
+              line-height: 26.4px;
+            }
+          }
+        }
+        .head__extra {
+          width: 450px;
+          height: 54px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          @include _screenMobile {
+            width: 320px;
+            height: 48px;
+          }
+          .head__extra__txt {
+            width: 450px;
+            height: 25px;
+            @include font(18px, $colorTextUnactive, 400);
+            font-weight: 400;
+            line-height: 25.2px;
+            text-align: left;
+            @include _screenMobile {
+              width: 320px;
+              height: 22px;
+              font-size: 16px;
+              line-height: 22.4px;
+            }
+          }
+        }
+      }
+      // .card__info__btn {
+      //   all: unset;
+      //   width: 224px;
+      //   height: 46px;
+      //   padding: 12px 24px;
+      //   border-radius: 10px;
+      //   background: $colorButtonDark;
+      //   @include font(20px, $colorTextLight, 400);
+      //   line-height: 24px;
+      //   text-align: center;
+      //   @include _screenMobile {
+      //     width: 320px;
+      //     height: 46px;
+      //     font-size: 18px;
+      //     line-height: 21.6px;
+      //   }
+      // }
+    }
+    .card__info__bottom {
+      width: 646px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      @include _screenMobile {
+        width: 320px;
+        height: 46px;
+      }
+      .card__info__bottom__reaction {
+        width: 646px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include _screenMobile {
+          width: 280px;
+          height: 24px;
+        }
+        .card__info__bottom__reaction__icon {
+          width: 24px;
+          height: 24px;
+        }
+        .card__info__bottom__reaction__txt {
+          width: 230px;
+          height: 19px;
+          @include font(16px, $colorTextMessage, 500);
+          line-height: 19.2px;
+          text-align: left;
+          @include _screenMobile {
+            width: 213px;
+            height: 24px;
+            font-size: 16px;
+            line-height: 19.2px;
+          }
+        }
+      }
+      .card__info__bottom__btnblock {
+        width: 286px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .card__info__bottom__btnblock__btn {
+          all: unset;
+          width: 224px;
+          height: 46px;
+          //  padding: 12px 24px;
+          border-radius: 10px;
+          background: $colorButtonDark;
+          @include font(20px, $colorTextLight, 400);
+          line-height: 24px;
+          text-align: center;
+          cursor: pointer;
+          @include _screenMobile {
+            width: 320px;
+            height: 46px;
+            font-size: 18px;
+            line-height: 21.6px;
+          }
+        }
+        //   .card__info__bottom__btnblock__like {
+        //     all: unset;
+        //     width: 46px;
+        //     height: 46px;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     //  padding: 11px;
+        //     border-radius: 10px;
+        //     background: $colorItemOnHover;
+        //     .card__info__bottom__btnblock__like__img {
+        //       width: 24px;
+        //       height: 24px;
+        //       // padding: 3px 1px 2px 1px;
+        //       cursor: pointer;
+        //     }
+        //   }
+      }
+      .card__info__bottom__period {
+        width: 100%;
+        height: 0;
+        border: 1px solid $colorItemBorder;
+      }
+    }
+  }
+
+  .card__description {
+    width: 646px;
+    height: 1868px;
+    // height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    // overflow: scroll;
+    @include _screenMobile {
+      width: 320px;
+      // height: 46px;
+      height: fit-content;
+    }
+    .card__description__info {
+      width: 646px;
+      height: 216px;
+      @include font(18px, $colorText, 400);
+      line-height: 25.2px;
+      text-align: left;
+    }
+    .smallBox {
+      width: 646px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include _screenMobile {
+        width: 320px;
+        height: fit-content;
+      }
+      .smallBox__header {
+        width: 646px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: 24px;
+        }
+        .smallBox__header__title {
+          width: fit-content;
+          height: 29px;
+          white-space: nowrap;
+          @include font(24px, $colorText, 500);
+          line-height: 28.8px;
+          text-align: left;
+          @include _screenMobile {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+        .smallBox__header__period {
+          width: 100%;
+          height: 0;
+          border: 1px solid $colorItemBorder;
+        }
+      }
+      .smallBox__container {
+        width: 646px;
+        height: fit-content;
+        display: flex;
+        @include flex(column, center, flex-start);
+        gap: 24px;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+          gap: 28px;
+        }
+        .smallBox__container__txt {
+          @include font(18px, $colorText, 400);
+          line-height: 25.2px;
+          text-align: left;
+          @include _screenMobile {
+            width: 320px;
+            height: fit-content;
+            font-size: 16px;
+            line-height: 22.4px;
+          }
+        }
+      }
+      .smallBox__content {
+        width: 646px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include _screenMobile {
+          width: 320px;
+          height: fit-content;
+          gap: 8px;
+        }
+        .smallBox__content__str {
+          width: 646px;
+          height: fit-content;
+          display: flex;
+          gap: 12px;
+          @include _screenMobile {
+            width: 320px;
+            height: fit-content;
+          }
+          .smallBox__content__str__title {
+            width: 144px;
+            height: 22px;
+            @include font(16px, $colorTextUnactive, 400);
+            line-height: 22.4px;
+            text-align: left;
+            @include _screenMobile {
+              width: 83px;
+              height: 20px;
+              font-size: 14px;
+              line-height: 19.6px;
+            }
+          }
+          .smallBox__content__exp {
+            width: 490px;
+            // height: 304px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @include _screenMobile {
+              width: 320px;
+              height: fit-content;
+              gap: 24px;
+            }
+            .smallBox__content__exp__header {
+              width: 490px;
+              height: 57px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              @include _screenMobile {
+                width: 225px;
+                height: 52px;
+              }
+              .smallBox__content__exp__title {
+                width: 490px;
+                height: 24px;
+                @include font(20px, $colorText, 500);
+                line-height: 24px;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include _screenMobile {
+                  width: 225px;
+                  height: 22px;
+                  font-size: 18px;
+                  line-height: 21.6px;
+                }
+              }
+              .smallBox__content__exp__txt {
+                width: 490px;
+                height: 25px;
+                @include font(18px, $colorTextUnactive, 400);
+                line-height: 25.2px;
+                text-align: left;
+                @include _screenMobile {
+                  width: 225px;
+                  height: 22px;
+                  font-size: 16px;
+                  line-height: 22.4px;
+                }
+              }
+            }
+            .smallBox__content__exp__main {
+              width: 490px;
+              // height: 227px;
+              height: fit-content;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              @include _screenMobile {
+                width: 225px;
+                height: fit-content;
+              }
+              .smallBox__content__exp__main__title {
+                width: 490px;
+                height: 27px;
+                @include font(18px, $colorText, 600);
+                line-height: 27px;
+                text-align: left;
+                @include _screenMobile {
+                  width: 225px;
+                  height: 24px;
+                  font-size: 16px;
+                  line-height: 24px;
+                }
+              }
+              .smallBox__content__exp__main__txt {
+                // width: 490px;
+                width: 100%;
+                height: fit-content;
+                @include font(18px, $colorText, 400);
+                line-height: 25.2px;
+                text-align: left;
+                @include _screenMobile {
+                  width: 225px;
+                  font-size: 16px;
+                  line-height: 22.4px;
+                }
+              }
+            }
+          }
+          .smallBox__content__str__data {
+            width: 490px;
+            height: 25px;
+            @include font(18px, $colorText, 400);
+            line-height: 25.2px;
+            text-align: left;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include _screenMobile {
+              width: 225px;
+              height: 22px;
+              font-size: 16px;
+              line-height: 22.4px;
+            }
+          }
+        }
+      }
+      .smallBox__link {
+        all: unset;
+        width: 181px;
+        height: 19px;
+        @include font(16px, $colorTextChangeInfo, 400);
+        line-height: 19.2px;
+        text-align: center;
+        // text-underline-position: from-font;
+        // text-decoration-skip-ink: none;
+        text-decoration: none;
+      }
+    }
+  }
+}

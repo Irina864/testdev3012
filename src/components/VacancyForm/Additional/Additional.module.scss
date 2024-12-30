@@ -1,0 +1,55 @@
+@import '@/variables';
+@import '@/template';
+
+.rightBlock {
+  min-height: fit-content;
+  //  max-width: 736px;
+  width: 100%;
+  background-color: #ffff;
+}
+.rightBlock__education {
+  //   width: 736px;
+  //   height: 196px;
+  // не совпадал отступ
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  @include _screenMobile {
+    margin: 20px 0;
+    margin-top: 32px;
+  }
+}
+.label__title {
+  font-family: Fira Sans;
+  line-height: 19.2px;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 10px;
+  @include _screenMobile {
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+}
+.label__title_err {
+  font-family: Fira Sans;
+  font-size: 16px;
+  line-height: 19.2px;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: $colorTextError;
+  @include _screenMobile {
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+}
+.rightBlock__languages {
+  margin-bottom: 32px;
+}
+.rightBlock__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap {
+  margin-left: 5px;
+}

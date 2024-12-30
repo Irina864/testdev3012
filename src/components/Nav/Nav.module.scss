@@ -1,0 +1,33 @@
+@import '@/variables';
+@import '@/template';
+
+.nav {
+  display: flex;
+  @include flex(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  .nav__item {
+    @include font(16px, $colorTextUnactive, 500);
+    line-height: 19.2px;
+    @include _screenMobile {
+      @include font(14px, $colorTextUnactive, 500);
+      line-height: 16.8px;
+    }
+  }
+  .page {
+    color: $colorText;
+  }
+  .noline {
+    text-decoration: none;
+  }
+  .main {
+    @include _screenMobile {
+      display: none;
+    }
+  }
+  .main_mobile {
+    display: none;
+    @include _screenMobile {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,266 @@
+// @import "@/template";
+// @import "@/variables";
+
+// .formBtn {
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: 94px 1fr 94px;
+//   .btn {
+//     padding: 12px 24px;
+//     @include font(16px, $colorTextLight, 400);
+//     line-height: 19.2px;
+//     align-items: center;
+//     border: 0.5px solid $colorButtonBorder;
+//     border-radius: 10px;
+//     &:hover {
+//       cursor: pointer;
+//     }
+//   }
+//   .back {
+//     grid-area: 1/1/2/2;
+//     background-color: $colorButtonLight;
+//     color: $colorText;
+//     &:hover {
+//       background-color: $colorButtonLightHover;
+//       transition: background-color 0.3s ease;
+//     }
+//     &:active {
+//       background-color: $colorButtonLight;
+//       color: $colorButtonLightActive;
+//     }
+//   }
+//   .next {
+//     grid-area: 1/3/2/4;
+//     background-color: $colorButtonDark;
+//     &:hover {
+//       background-color: $colorButtonDarkHover;
+//       transition: background-color 0.3s ease;
+//     }
+//     &:active {
+//       background-color: $colorButtonDarkActive;
+//     }
+//   }
+//   .publish {
+//     grid-area: 1/4/2/6; /* placed in the new column */
+//     background-color: $colorButtonDark;
+//     &:hover {
+//       background-color: $colorButtonDarkHover;
+//       transition: background-color 0.3s ease;
+//     }
+//     &:active {
+//       background-color: $colorButtonDarkActive;
+//     }
+//   }
+// }
+
+// .modalDialog {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 14px;
+//   background-color: $colorBackgroundForm;
+//   padding: 3.75rem;
+
+//   .modalDialogTitle {
+//     color: $colorText;
+//     font-family: $font;
+//     font-size: 30px;
+//     font-weight: 500;
+//   }
+
+//   .modalDialogText {
+//     color: $colorText;
+//     font-family: $font;
+//     font-size: 20px;
+//     font-weight: 400;
+//   }
+
+//   .modalDialogActions {
+//     display: flex;
+//     justify-content: center;
+//     gap: clamp(12px, 2vw, 32px);
+//   }
+
+//   .modalDialogButton {
+//     border-radius: 10px;
+//     font-family: $font;
+//     font-size: clamp(16px, 2vw, 20px);
+//     text-transform: lowercase;
+//     font-weight: 400;
+//     width: 226px;
+//     height: 46px;
+//     // padding: 12px 24px;
+//   }
+
+//   .firstLetter {
+//     text-transform: uppercase;
+//   }
+
+//   .backButton {
+//     border: 0.5px solid $colorButtonBorder;
+//     color: $colorText;
+//     background-color: $colorButtonLight;
+//     &:hover {
+//       background-color: $colorButtonLightHover;
+//     }
+//     &:active {
+//       background-color: #e7edff;
+//     }
+//   }
+
+//   .resumeButton {
+//     background-color: $colorButtonDark;
+//     color: $colorTextLight;
+//     &:hover {
+//       background-color: $colorButtonDarkHover;
+//     }
+//     &:active {
+//       background-color: $colorButtonDarkActive;
+//     }
+//   }
+// }
+@import '@/template';
+@import '@/variables';
+
+.modalOverlay {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include _screenMobile {
+    top: 92px;
+    background-color: transparent;
+  }
+}
+
+.modalDialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color: $colorBackgroundForm;
+  padding: 3.75rem;
+  gap: 20px;
+  @include _screenMobile {
+    height: 100%;
+    justify-content: flex-start;
+    padding: 125px 20px;
+    border-radius: 0px;
+  }
+}
+
+.modalDialogTitle {
+  color: $colorText;
+  font-family: $font;
+  font-size: 30px;
+  font-weight: 500;
+  @include _screenMobile {
+    @include font(22px, $colorText, 500);
+    text-align: center;
+    line-height: 26.4px;
+  }
+}
+
+.modalDialogText {
+  color: $colorText;
+  font-family: $font;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-weight: 400;
+  @include _screenMobile {
+    @include font(16px, $colorText, 400);
+    text-align: center;
+    line-height: 19.4px;
+  }
+}
+
+.modalDialogActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 32px);
+  width: 100%;
+  @include _screenMobile {
+    margin-top: 28px;
+    flex-direction: column-reverse;
+    @include font(18px, $colorText, 400);
+    text-align: center;
+    line-height: 21.6px;
+  }
+}
+
+.modalDialogButton {
+  border-radius: 10px;
+  font-family: $font;
+  font-size: clamp(16px, 2vw, 20px);
+  text-transform: lowercase;
+  font-weight: 400;
+  width: 226px;
+  height: 46px;
+  display: flex;
+  @include flex(row, center, center);
+
+  border: none;
+  cursor: pointer;
+  @include _screenMobile {
+    width: 100%;
+    @include font(18px, $colorText, 400);
+
+    line-height: 21.6px;
+    height: 52px;
+  }
+}
+
+.firstLetter {
+  text-transform: uppercase;
+}
+
+.backButton {
+  border: 0.5px solid $colorButtonBorder;
+  color: $colorText;
+  background-color: $colorButtonLight;
+  text-decoration: none;
+  &:hover {
+    background-color: $colorButtonLightHover;
+  }
+  &:active {
+    background-color: #e7edff;
+  }
+  @include _screenMobile {
+    border: none;
+    color: $colorLinkBtn;
+    background-color: transparent;
+    text-decoration: underline;
+    &:hover {
+      color: $colorLinkBtnHover;
+      cursor: pointer;
+    }
+    &:active {
+      color: $colorLinkBtnActive;
+    }
+    &:disabled {
+      color: $colorTextUnactive;
+      pointer-events: none;
+    }
+  }
+}
+
+.resumeButton {
+  background-color: $colorButtonDark;
+  color: $colorTextLight;
+  text-decoration: none;
+  &:hover {
+    background-color: $colorButtonDarkHover;
+  }
+  &:active {
+    background-color: $colorButtonDarkActive;
+  }
+}

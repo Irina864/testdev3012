@@ -1,0 +1,64 @@
+@import '@/template';
+@import '@/variables';
+
+.box {
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 12px;
+  width: 100%;
+  .label {
+    @include font(16px, $colorText, 400);
+    line-height: 19.2px;
+    text-align: left;
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+    }
+  }
+  .disabled {
+    color: $colorTextUnactive;
+  }
+
+  .container {
+    position: relative;
+  }
+  .input {
+    width: 100%;
+    min-height: 46px;
+    padding: 8px 16px;
+    background-color: $colorInput;
+    border: 0.5px solid $colorInput;
+    border-radius: 10px;
+    gap: 12px;
+    @include font(16px, $colorText, 400);
+    @include _screenMobile {
+      @include font(14px, $colorText, 400);
+    }
+    line-height: 19.2px;
+    text-align: left;
+    resize: none;
+    &:active {
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:focus {
+      outline: none;
+      border: 0.5px solid $colorInputBorderActive;
+    }
+    &:disabled {
+      background-color: $colorInputDisabled;
+      border: 0.5px solid $colorInputDisabled;
+      color: $colorTextUnactive;
+    }
+  }
+  .inputCustom {
+    padding-left: 44px;
+  }
+  .customPlaceholder {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    @include font(16px, $colorTextUnactive, 400);
+    transition: all 0.3s;
+  }
+}

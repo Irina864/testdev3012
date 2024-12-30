@@ -1,0 +1,77 @@
+@import '@/variables';
+@import '@/template';
+
+.box {
+  width: 432px;
+  // height: 159px;
+  height: fit-content;
+  padding: 12px 80px 12px 20px;
+  display: flex;
+  @include flex(row, flex-start, flex-start);
+  gap: 16px;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px 0px $colorShadowCards;
+  background-color: $colorBackgroundForm;
+  @include _screenMobile {
+    width: 320px;
+    padding: 12px 49px 12px 20px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    @include font(14px, $colorText, 500);
+    line-height: 16.8px;
+  }
+  .box__img {
+    width: 24px;
+    height: 24px;
+  }
+  .box__content {
+    width: 292px;
+    // height: 135px;
+    height: fit-content;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 8px;
+    .box__content__title {
+      width: 173px;
+      height: 24px;
+      @include font(20px, $colorText, 500);
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      @include _screenMobile {
+        @include font(14px, $colorText, 500);
+        line-height: 16.8px;
+      }
+    }
+    .box__content__message {
+      width: 300px;
+      // height: 103px;
+      height: fit-content;
+      .box__content__message__text {
+        @include font(16px, $colorText, 500);
+        line-height: 19.2px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        @include _screenMobile {
+          @include font(12px, $colorText, 500);
+          line-height: 14.4px;
+        }
+      }
+      .box__content__message__text__span {
+        list-style-position: inside;
+        margin-left: 7px;
+        @include font(16px, $colorText, 400);
+        line-height: 22.4px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        @include _screenMobile {
+          @include font(14px, $colorText, 400);
+          line-height: 16.8px;
+        }
+      }
+    }
+  }
+}

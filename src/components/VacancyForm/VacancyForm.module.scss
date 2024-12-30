@@ -1,0 +1,13 @@
+@import '@/variables';
+@import '@/template';
+
+.form {
+  background-color: $colorBackgroundForm;
+  padding: 48px 40px;
+  border-radius: 10px;
+  @include _screenMobile {
+    padding: 0px;
+    border-radius: 0px;
+    width: 100%;
+  }
+}

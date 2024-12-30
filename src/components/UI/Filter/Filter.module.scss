@@ -1,0 +1,239 @@
+@import "@/variables";
+@import "@/template";
+
+.filter {
+  width: 100%;
+  max-width: 438px;
+  // max-width: 461px;
+  height: 48px;
+  display: flex;
+  @include flex(row, space-between, center);
+  border-radius: 14px;
+  box-shadow: -1px 1px 20px 0px $borderBlur;
+  background-color: $colorItem;
+  &:hover {
+    box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  }
+  .filter__box {
+    display: grid;
+    width: 100%;
+    // grid-template-columns:
+    //   calc((145px / 405px) * 100%) 1px calc((139px / 405px) * 100%)
+    //   1px calc((105px / 405px) * 100%);
+
+    grid-template-columns:
+      calc((145px / 382px) * 100%) 1px calc((116px / 382px) * 100%)
+      1px calc((105px / 382px) * 100%);
+    gap: 3.5px;
+    align-items: center;
+    .filter__item {
+      padding: 14.5px 20px;
+      display: flex;
+      @include flex(row, center, center);
+
+      border: none;
+    }
+  }
+  .filter__search {
+    margin: 8px 12px;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    @include flex(column, center, center);
+    background-color: $colorButtonDark;
+    border: none;
+    border-radius: 10px;
+    @include font(20px, $colorTextLight, 400);
+    &:hover {
+      background-color: $colorButtonDarkHover;
+      transition: background-color 0.3s ease;
+    }
+    &:active {
+      background-color: $colorButtonDarkActive;
+    }
+    .filter__img {
+      max-width: 100%;
+      max-height: 18.68px;
+      display: block;
+      margin: 0px auto;
+    }
+  }
+}
+
+.filter_wrap {
+  width: 100%;
+  display: flex;
+  @include flex(column, flex-start, center);
+  gap: 0;
+}
+.filterSearch {
+  padding: 0px 12px 0px 0px;
+  width: 100%;
+  max-width: 1028px;
+  height: 70px;
+  display: flex;
+  @include flex(row, space-between, center);
+  gap: 12px;
+  border-radius: 14px;
+  box-shadow: -1px 1px 20px 0px $borderBlur;
+  background-color: $colorItem;
+  &:hover {
+    box-shadow: -1px 1px 20px 0px $borderBlurActive;
+    background-color: $colorFilterHover;
+  }
+  &:focus {
+    box-shadow: -1px 1px 20px 0px $borderBlurActive;
+    background-color: $colorFilterHover;
+  }
+  &:active {
+    box-shadow: -1px 1px 20px 0px $borderBlurActive;
+    background-color: $colorFilterHover;
+  }
+  .filter__form {
+    display: grid;
+    width: 100%;
+    grid-template-columns:
+      calc((402px / 956px) * 100%) 1px calc((276px / 956px) * 100%)
+      1px calc((262px / 956px) * 100%);
+
+    gap: 2px;
+    align-items: center;
+    .filter__wrap {
+      padding: 12px 40px;
+      display: flex;
+      @include flex(column, flex-start, flex-start);
+      gap: 8px;
+      border-radius: 12px;
+      &:nth-child(5) {
+        padding-right: 12px;
+      }
+      &:hover {
+        background-color: $colorFilterBackgroundHover;
+      }
+      &:focus,
+      &:active {
+        background-color: $colorFilterBackgroundActive;
+      }
+    }
+    .wrap_active {
+      background-color: $colorFilterBackgroundActive;
+    }
+    .filter__label {
+      @include font(16px, $colorText, 500);
+      line-height: 19.2px;
+    }
+  }
+
+  .filter__search {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    @include flex(column, center, center);
+    background-color: $colorButtonDark;
+    border: none;
+    border-radius: 10px;
+    @include font(20px, $colorTextLight, 400);
+    &:hover {
+      background-color: $colorButtonDarkHover;
+      transition: background-color 0.3s ease;
+    }
+    &:active {
+      background-color: $colorButtonDarkActive;
+    }
+    .filter__img {
+      width: 22.42px;
+      height: 23.26px;
+
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.filter__input {
+  @include font(16px, $colorText, 400);
+  line-height: 19.2px;
+
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  background-color: transparent;
+  &:active {
+    border: none;
+    @include font(16px, $colorText, 400);
+  }
+  &:hover {
+    @include font(16px, $colorTextUnactive, 400);
+  }
+  &:focus {
+    @include font(16px, $colorText, 400);
+    outline: none;
+  }
+  &::placeholder {
+    @include font(16px, $colorTextUnactive, 400);
+  }
+}
+.form_active {
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+  background-color: $colorFilterHover;
+}
+.active {
+  box-shadow: -1px 1px 20px 0px $borderBlurActive;
+}
+.line {
+  height: 32px;
+  width: 1px;
+  border: none;
+  background-color: $colorLine;
+}
+
+.windows {
+  position: relative;
+  height: 0;
+  width: 100%;
+  max-width: 1028px;
+  .first_window {
+    position: absolute;
+    width: 100%;
+    max-width: 402px;
+    top: 12px;
+    left: 0;
+  }
+  .second_window {
+    position: absolute;
+    width: 100%;
+    max-width: 618px;
+    top: 12px;
+    left: calc((402px / 1024px) * 100% + 5px);
+  }
+  .third_window {
+    position: absolute;
+    width: 100%;
+    max-width: 334px;
+    top: 12px;
+    left: calc((678px / 1024px) * 100% + 10px);
+  }
+}
+.windows_min {
+  width: 100%;
+  max-width: 438px;
+}
+.errorInput {
+  border-color: $colorInputBorderError !important;
+}
+.second_min {
+  position: absolute;
+  left: calc((145px / 438px) * 100%);
+}
+.third_min {
+  position: absolute;
+  left: calc((261px / 438px) * 100%);
+}
+@media screen and (max-width: 580px) {
+  .filter_wrap {
+    display: none;
+  }
+}

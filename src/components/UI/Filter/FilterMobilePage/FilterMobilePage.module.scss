@@ -1,0 +1,132 @@
+@import '@/variables';
+@import '@/template';
+
+.filterPage {
+  width: 100%;
+  height: 100%;
+  .filterHeader {
+    padding: 8px 20px 20px 20px;
+    background-color: $colorBackground;
+    display: flex;
+    @include flex(row, space-between, center);
+    .filterTitle {
+      padding: 0;
+      margin: 0;
+      @include font(16px, $colorText, 500);
+      line-height: 19.2px;
+      text-align: center;
+    }
+    .closeButton {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .filterContent {
+    background-color: $colorBackgroundForm;
+    padding: 36px 20px 40px 20px;
+    display: flex;
+    @include flex(column, flex-start, flex-start);
+    gap: 20px;
+    .sectionWrap {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      .radioWrap {
+        padding-top: 4px;
+        padding-left: 4px;
+        display: flex;
+        @include flex(column, flex-start, flex-start);
+        gap: 4px;
+      }
+    }
+    .dropdownWrapper {
+      width: 100%;
+      position: absolute;
+      top: 79px;
+      z-index: 500;
+    }
+  }
+}
+
+.filterInput {
+  width: 100%;
+  height: 46px;
+  padding: 14.5px 16px;
+  border: none;
+  border-radius: 10px;
+  @include font(14px, $colorText, 400);
+  line-height: 16.8px;
+  outline: none;
+  background-color: $colorInput;
+  &:active {
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:focus {
+    outline: none;
+    border: 0.5px solid $colorInputBorderActive;
+  }
+  &:disabled {
+    background-color: $colorInputDisabled;
+    border: 0.5px solid $colorInputDisabled;
+    color: $colorText;
+  }
+  &::placeholder {
+    color: $colorTextUnactive;
+  }
+}
+
+.filterActions {
+  width: 100%;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  gap: 8px;
+  .applyButton,
+  .resetButton {
+    width: 100%;
+    height: 46px;
+    padding: 12px 24px;
+    border: 0.5px solid $colorButtonDark;
+    border-radius: 10px;
+    @include font(14px, $colorTextLight, 400);
+    line-height: 16.8px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: $colorButtonDark;
+    &:hover {
+      border: 0.5px solid $colorButtonDarkHover;
+      background-color: $colorButtonDarkHover;
+    }
+    &:active {
+      border: 0.5px solid $colorButtonDarkActive;
+      background-color: $colorButtonDarkActive;
+    }
+    &:disabled {
+      border: 0.5px solid $colorCheckboxBorderDisabled;
+      background-color: $colorCheckboxBorderDisabled;
+    }
+  }
+  .resetButton {
+    color: $colorText;
+    border: 0.5px solid $colorButtonDark;
+    background-color: $colorButtonLight;
+    &:hover {
+      border: 0.5px solid $colorButtonDark;
+      color: $colorText;
+      background-color: $colorButtonLight;
+    }
+    &:active {
+      border: 0.5px solid $colorButtonDark;
+      background-color: $colorButtonLight;
+      color: $colorTextActive;
+    }
+    &:disabled {
+      border: 0.5px solid $colorCheckboxBorderDisabled;
+      color: $colorTextUnactive;
+      background-color: $colorButtonLight;
+    }
+  }
+}

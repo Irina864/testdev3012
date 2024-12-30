@@ -1,0 +1,37 @@
+@import '@/variables';
+@import '@/template';
+
+.main {
+  margin: 0 100px 60px 100px;
+  display: flex;
+  @include flex(column, flex-start, flex-start);
+  .nav {
+    margin: 32px 0;
+    display: flex;
+    @include flex(row, space-between, center);
+    width: 100%;
+    .nav__btn {
+      @include font(16px, $colorLinkBtn, 400);
+      border: none;
+      background-color: transparent;
+      text-decoration: none;
+      &:hover {
+        color: $colorLinkBtnHover;
+        cursor: pointer;
+      }
+      &:active {
+        color: $colorLinkBtnActive;
+      }
+      &:disabled {
+        color: $colorTextUnactive;
+        pointer-events: none;
+      }
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 31.61% 65.8%;
+    gap: 32px;
+    width: 100%;
+  }
+}
